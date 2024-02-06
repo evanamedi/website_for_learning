@@ -1,0 +1,49 @@
+<SETUP SCHEME>
+
+the layout for the flask application that will likely change
+
+
+learnwebsite/
+	app/
+		templates/
+		static/
+		__init__.py
+		routes.py
+		models.py
+	migrations/
+	config.py
+	run.py
+
+
+
+learnwebsite/
+the root directory of the application
+
+app: where the main application module lives
+
+templates/ 
+this directory stores the HTML templates that the app will render
+
+static/ 
+this directory stores static files like CSS, JavaScript, and images
+
+__init__.py/ 
+this is a special file in python often used to indicate that a directory should be treated as a python package. meaning that it can be imported as a module. in the context of a flask application, this file usually serves to create the flask application object and to import parts of the application. 
+
+it marks a directory as a python package, so it can be imported as a module in a script
+
+it can define a specific interface for a package. When you import a package, Python runs the __init__.py file and considers any objects defined in it as part of the package's public interface
+
+it can be used to perform setup needed for the package (like initialization of variables, import of necessary modules, etc.)
+
+this file is typically where the application and its features (like routes, databases, etc.) are initialized. this makes it a central part of the application and a common place to import when you need to interact with the application package
+
+routes.py/
+this file defines the routes that the application will implement
+
+this is where one would define different routes that an application will respond to. a route is essentially a URL pattern, and when Flask sees a request that matches the pattern, it calls the associated python function
+
+in a larger application, the routes.py file could contain many routes, each associated with different functions. The functions could perform a variety of tasks, such as querying a database, processing from data, handling file uploads, and more.
+
+models.py/
+this file defines the data models of the application

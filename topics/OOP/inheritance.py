@@ -4,6 +4,7 @@
 
 # Key Concepts:
 
+
 # Base Class (Parent Class):
 # The class whose properties and methods are inherited is known as the base case or parent class
 
@@ -23,6 +24,7 @@
 # Access Modifiers:
 # These define the accessibility of the properties and methods of a class. Common access
 # modifiers include public, private, and protected.
+
 
 
 # Example of inheritance in Python:
