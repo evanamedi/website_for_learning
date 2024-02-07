@@ -1,0 +1,44 @@
+/* -------NAVIGATION------- */
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    color: rgb(8, 255, 226);
+    padding: 14px 16px;
+
+}
+
+nav a:hover {
+    background-color: rgb(214, 255, 6);
+    color: black;
+    border-radius: 10px;
+    padding: 10px 12px;
+    
+}
+
+.navbar {
+    width: 100%;
+
+}
+
+/* -------BODY------- */
+html {
+    background-color: #b1b1b1;
+}
+
+/* -------BODY------- */
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
