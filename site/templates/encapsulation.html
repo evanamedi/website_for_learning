@@ -6,4 +6,72 @@ Encapsulation
 
 {% block body %}
 <h1>Encapsulation</h1>
+<p class="margin-top">Encapsulation is one the fundamental concepts in OOP. It describes the idea of wrapping data and the methods that work on data within one unit. This puts restrictions on accessing variables and methods directly and can prevent the accidental modification of data.</p>
+<p class="margin-top">Breaking it down:</p>
+<p>Data Hiding: The implementation of the class is hidden from other classes, and can only be accessed through the methods of their current class. This is also known as data hiding.</p>
+<p>Accessors and Mutators: To achieve encapsulation in Python, you can use private attributes and provide public getter and setter methods to modify and access the attributes. These are often referred to as accessors (getters) and mutators (setters).</p>
+<p>Abstraction: Encapsulation also allows a class to change its implementation without affecting other parts of the code, which is known as abstraction.</p>
+<p class="margin-top">Example in Python:</p>
+<pre class="code-box">
+    <code>
+class Computer:		            <span class="comment"># define a class named Computer</span>
+    def __init__(self):		    <span class="comment"># initialize method or constructor for the class</span>
+        self.__maxprice = 900   <span class="comment"># private attribute, not directly accessible from outside the class</span>
+
+    def sell(self):		        <span class="comment"># public method to print the selling price</span>
+        print("Selling Price: {}".format(self.__maxprice))
+
+    def setMaxPrice(self, price):	<span class="comment"># public method (setter) to set the price of the computer</span>
+        self.__maxprice = price 	<span class="comment"># modifying the private attribute within the class</span>
+
+c = Computer()	    <span class="comment"># create an object of the computer class</span>
+c.sell()            <span class="comment"># call the sell method, it will print the initial price</span>
+
+c.__maxprice = 1000     <span class="comment"># try to directly change the price</span>
+c.sell()                <span class="comment"># call the sell method, it will still print the initial price because we can't change it directly using setter function</span>                                   
+                        <span class="comment"># use the setter method to change the price</span>
+c.setMaxPrice(1000)     <span class="comment"># now, when we call the sell method, it will print the updated price</span>
+c.sell()
+    </code>
+</pre>
+<p>In the script we defined a [ Computer ] class. We are using [ __init__() ] method to store the maximum selling price of [ Computer ]. We tried to modify the price. However, we can't change it because Python treats the [ __maxprice ] as private attributes.</p>
+<p>As a result, to change the value, you have to use a setter method [ setMaxPrice() ] which takes price as parameter.</p>
+<p>The output would be:<p>
+    <pre class="code-box">
+        <code>
+Selling Price: 900
+Selling Price: 900
+Selling Price: 1000
+        </code>
+    </pre>
+<p>Encapsulation helps us to avoid data being modified accidentally and provides a way to protect and control access to attributes in a class.</p>
+<p>Another way to sum it up: The [ Computer ] class encapsulates the [ __maxprice ] attribute and provides the [ sell ] method to display it, and the [ setMaxPrice ] method to change it. The [ __maxprice ] attribute is not directly accessible from outside the class - trying to change it directly won't have any effect. Instead, you have to use the [ setMaxPrice ] method to modify it.</p>
+<p class="margin-top">Another Example:</p>
+<p>A setter method provides controlled access to modify the values of private attributes. This is useful because you can add checks or validation within the setter method to prevent invalid or inconsistent states for your objects.</p>
+<pre class="code-box">
+    <code>
+class Myclass:
+    def __init__(self):
+        self.__my_attribute = 0
+
+    def set_my_attribute(self, value):
+        if value < 0:
+            raise ValueError("Value cannot be negative")
+        self.__my_attribute = value
+
+obj = Myclass()
+obj.set_my_attribute(10)	<span class="comment"># this modifies the __my_attribute value to 10</span>
+    </code>
+</pre>
+<p>In this example, [ set_my_attribute ] is a setter method that modifies the value of [ __my_attribute ]. It also includes a check to ensure that the value cannot be set to a negative number. If you try to set it to a negative number, it will raise a ValueError.</p>
+<p class="magrin-top">Some Best Practices For Using Encapsulation In OOP:</p>
+<p>Data Hiding: Keep the data hidden and not directly accessible from outside the class. Use private visibility for attributes which should not be accessible directly.</p>
+<p>Use Accessors and Mutators: Provide public getting and setter methods (accessors and mutators) to access and modify the private attributes of a class. This allows you to control how important variables are read and written to.</p>
+<p>Validation: You can add validation logic in setter methods to protect your data from getting into an inconsistent or invalid state.</p>
+<p>Abstraction: Encapsulation is a way to achieve data abstraction. The user will have the information on what methods do, but they won't need to know how they do it.</p>
+<p>Reduce Coupling: Encapsulation can help reduce coupling between different parts of your program, making it easier to modify without affecting other parts of the code.</p>
+<p>Consistency: Be consistent in how you apply encapsulation in your code. If you start using getters and setters for accessing properties of the class, stick to it throughout your code.</p>
+<p>Avoid Excessive Use: While encapsulation is important, it's also crucial not to overuse it. Not every single variable needs to be private with getters and setters. If a variable doesn't need any special behavior or constraints, it might not need to be encapsulated. </p>
+
+
 {% endblock %}

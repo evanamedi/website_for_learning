@@ -6,4 +6,144 @@ Association
 
 {% block body %}
 <h1>Association</h1>
+<p class="margin-top">Association represents a relationship between two or more objects</p>
+<p>Some key points:</p>
+<p>Definition: Association is a "using" relationship between two or more objects. It's a way for one objects to interact with another, without necessarily having a strong dependency. For example, a [ Driver ] object might have an association with a [ car ] object, because the driver uses the car</p>
+<p>Multiplicity: Association can be one-to-one, one-to-many, many-to-one, or many-to-many. For example, a [ Teacher ] object and a [ Student ] object could have a many-to-many association, because a teacher can teach many students, and a student can have many teachers.</p>
+<p>Directionality: Association can be unidirectional or bidirectional. In a unidirectional association, one object is aware of another and can interact with it, but not vice versa. In a bidirectional association, both objects are aware of each other.</p>
+<p>Navigation: The direction of the association between two classes is called navigation. It can be either from one class to another or vice versa, or both.</p>
+<p>Association vs Aggregation vs Composition: These are three types of relationships in OOP. Association is the most general, aggregation is a special form of association (a "has-a" relationship, where the child can exist independently of the parent), and composition is a stronger form of aggregation (where the child cannot exist independently of the parent).</p>
+<p class="margin-top">Python Examples:</p>
+<p>one-to-one relationship:</p>
+<pre class="code-box">
+    <code>
+class Car:                      <span class="comment"># define the car class</span>
+    def __init__(self, model):	<span class="comment"># the constructor method for the Car class</span>
+        self.model = model      <span class="comment"># an instance variable 'model' is created and set to the value passed as an argument</span>
+                                                                            
+class Driver:	                <span class="comment"># define driver class</span>
+    def __init__(self, name):   <span class="comment"># the constructor method for the Driver class</span>
+        self.name = name        <span class="comment"># an instance variable 'name' is created and set to the value passed as an argument</span>
+                                                                            
+    def drive(self, car):       <span class="comment"># a method 'drive' that takes a Car instance as an argument</span>
+        print(f"{self.name} is driving a {car.model} car.")	<span class="comment"># prints a message using the 'name' of the Driver instance and the 'model' of the car</span>
+                                        
+car = Car("Toyota")	        <span class="comment"># create a Car instance 'car' with the model "Toyota"</span>
+driver = Driver("John")         <span class="comment"># create a Driver instance 'driver' with the name "John"</span>
+driver.drive(car)	        <span class="comment"># call the 'drive' method on the 'driver' instance, passing in the 'car' instance</span>
+    </code>
+</pre>
+<p>In this example, the [ Driver ] class has an association with the [ Car ] class, because it uses a [ Car ] object in its [ drive ] method. This is a one-to-one, unidirectional association.</p>
+<p>This is a one-to-one relationship because one instance of the [ Driver ] class is associated with one instance of the [ Car ] class in the drive method. The [ drive ] method is called on one [ Driver ] instance and takes one [ Car ] instance as an argument.</p>
+<p>It's important to note that this doesn't mean a [ Driver ] can only ever driver one  [ Car ] or vice versa. If you had multiple [ Car ] instances, you could call [ drive ] on the same [ Driver ] with each [ Car ]. But in the context of a single call to [ drive ], it's a one-to-one relationship because one [ Driver ] is driving one [ Car ].</p>
+<p class="margin-top">one-to-many relationship:</p>
+<p>Let's consider a scenario where a Teacher can have many Students. This is a one-to-many relationship because one Teacher is associated with multiple Student instances.</p>
+<pre class="code-box">
+    <code>
+class Student:
+    def __init__(self, name):
+        self.name = name
+
+class Teacher:
+    def __init__(self, name):
+        self.name = name
+        self.students = [] <span class="comment"># this will hold the list of students for the teacher</span>
+
+    def add_student(self, student):
+        self.students.append(student)
+
+    def list_students(self):
+        for student in self.students:
+            print(f"{self.name} is teaching {student.name}.")
+
+<span class="comment"># create some Student instances</span>
+student1 = Student("Alice")
+student2 = Student("Bob")
+student3 = Student("Charlie")
+
+<span class="comment"># create a Teacher instance</span>
+teacher = Teacher("Mr. Anderson")
+
+<span class="comment"># add the students to the teacher</span>
+teacher.add_student(student1)
+teacher.add_student(student2)
+teacher.add_student(student3)
+
+<span class="comment"># list the students for the teacher</span>
+teacher.list_students()
+    </code>
+</pre>
+<p>In this code, the [ Teacher ] class has a method [ add_student ] that takes a [ Student ] instance and adds it to the [ students ] list. The [ list_students ] method then goes through the [ students ] list and prints a message for each one. This demonstrates a one-to-many relationship because one [ Teacher ] is associated with many [ Student ] instances.</p>
+<p class="margin-top">many-to-many relationship:</p>
+<p>A many-to-many relationship occurs when multiple instances of one class are associated with multiple instances of another class. Consider a situation where a Student can enroll in multiple Courses, and a Course can have multiple Students.</p>
+<pre class="code-box">
+    <code>
+class Student:
+    def __init__(self, name):
+        self.name = name
+        self.courses = []   <span class="comment"># this will hold the list of courses for the student</span>
+
+    def enroll(self, course):
+        self.courses.append(course)
+        course.students.append(self)
+
+class Course:
+    def __init__(self, name):
+        self.name = name
+        self.students = []  <span class="comment"># this will hold the list of students in the course</span>
+
+    def list_students(self):
+        for student in self.students:
+            print(f"{student.name} is enrolled in {self.name}.")
+
+<span class="comment"># create some Course instances</span>
+course1 = Course("Math")
+course2 = Course("English")
+
+<span class="comment"># create some student instances</span>
+student1 = Student("Alice")
+student2 = Student("Bob")
+
+<span class="comment"># enroll the students in the courses</span>
+student1.enroll(course1)
+student1.enroll(course2)
+student2.enroll(course1)
+
+<span class="comment"># this the students in the courses</span>
+course1.list_students()
+course2.list_students()
+    </code>
+</pre>
+<p>In this code, both the [ Student ] and [ Course ] classes have a list to hold their associations (the [ courses ] list in [ Student ] and the [ students ] list in [ Course ]). The [ enroll ] method in [ Student ] adds a [ Course ] to the [ courses ] list an also adds the [ Student ] to the [ students ] list in [ Course ]. This sets up a  many-to-many relationship, because a [ Student ] can be enrolled in many [ Courses ], and a [ Course ] can have many [ Students ].</p>
+<p class="margin-top">many-to-one relationship:</p>
+<p>A many-to-one relationship occurs when multiple instances of one class are associated with a single instance of another class. Consider a situation where a Child has one Mother, but a Mother can have multiple Children.</p>
+<pre class="code-box">
+    <code>
+class Child:
+    def __init__(self, name, mother):
+        self.name = name
+        self.mother = mother            <span class="comment"># each child has one mother</span>
+        mother.children.append(self)    <span class="comment"># the mother has another child</span>
+
+class Mother:
+    def __init__(self, name):
+        self.name = name
+        self.children = []      <span class="comment"># this will hold the list of children for the mother</span>
+
+    def list_children(self):
+        for child in self.children:
+            print(f"{self.name} is the mother of {child.name}.")
+
+<span class="comment"># create a Mother instance</span>
+mother = Mother("Mrs. Smith")
+
+<span class="comment"># create some Child instances</span>
+child1 = Child("Alice", mother)
+child2 = Child("Bob", mother)
+
+<span class="comment"># list the children for the mother</span>
+mother.list_children()
+    </code>
+</pre>
+<p>In this code, the [ Mother ] class has a list [ children ] to hold her [ Child ] instances. When a [ Child ] is created, it's given a [ Mother ] instance, and it adds itself to the [ Mother ]s [ children ] list. This sets up a many-to-one relationship, because many [ Children ] are associated with one [ Mother ].</p>
 {% endblock %}

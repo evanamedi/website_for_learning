@@ -6,4 +6,62 @@ Abstraction
 
 {% block body %}
 <h1>Abstraction</h1>
+<p class="margin-top">Abstraction is the process of hiding the complex details of an operation while providing a simpler interface.</p>
+<p>Data Abstraction: Data abstraction is about providing only essential information to the outside world while hiding their background details, i.e., how the data is stored and operations are performed. In other words, the user interacts with only the information that is necessary, while the underlying complexities and hidden from the user.</p>
+<p>Method Abstraction: This is achieved by creating methods that perform complex operations, but providing a simple interface for them. The user doesn't need to know how the method does what it does- they just need to know what it does.</p>
+<p>Abstract Classes and Methods: In some programming languages like Java & C#, you can create abstract classes and methods. An abstract class is a class that cannot be instantiated and is meant to be subclassed. It can contain abstract methods (methods declared without an implementation) as well as  concrete methods (methods with an implementation). Subclasses of an abstract class are generally expected to provide an implementation for the abstract methods./p>
+<p>Interface: An interface is a completely abstract class that contains only abstract methods. In languages that support interfaces, they are a powerful way to achieve full abstraction and multiple inheritance.</p>
+<p>Encapsulation and Information Hiding: Abstraction is closely related to encapsulation and information hiding. Encapsulation is the bundling of data and methods that operate on that data within one unit, and information hiding is about making the data inaccessible to the outside world. Abstraction takes this a step further by not only hiding the data, but also by hiding how the methods of a class are implemented.</p>
+<p class="margin-top">The main advantage of abstraction is that it reduces complexity by breaking down complex systems into smaller, more manageable parts. This is also increases the maintainability, reusability, and modularity of the code. It allows you to change the implementation of an abstracted operation without affecting the rest of the code, as long as the interface stays the same.</p>
+<p class="margin-top">Consider an example of a payment processing system. In this system, we have different payment methods like Credit Card, Debit Card, and PayPal. Each payment method follows the same process: authorize the payment and then charge the payment. However, the implementation details for each payment method are different.</p>
+<p>In Python:</p>
+<pre class="code-box">
+    <code>
+from abc import ABC, abstractmethod
+
+class PaymentMethod(ABC):   <span class="comment"># define an abstract base class- PaymentMethod</span>
+    @abstractmethod         <span class="comment"># declare an abstract method- authorize</span>
+    def authorize(self):
+        pass
+
+    @abstractmethod         <span class="comment"># declare and abstract method- charge</span>
+    def charge(self):
+        pass
+
+class CreditCard(PaymentMethod):    <span class="comment"># define a concrete class- CreditCard, that inherits from PaymentMethod</span>
+    def authorize(self):            <span class="comment"># provide and implementation for the- authorize method</span>
+        print("Authorizing Credit Card")
+
+    def charge(self):               <span class="comment"># provide an implementation for the- charge method</span>
+        print("Charging Credit Card")
+
+class PayPal(PaymentMethod):        <span class="comment"># define a concrete class- PayPal that inherits from PaymentMethod</span>
+    def authorize(self):            <span class="comment"># provide an implementation for the- authorize method</span>
+        print("Authorizing PayPal Account")
+
+    def charge(self):               <span class="comment"># provide an implementation for the- charge method</span>
+        print("Charging PayPal Account")
+
+class PaymentProcessor:	                        <span class="comment"># define a class- PaymentProcessor</span>
+    def process_payment(self, payment_method):  <span class="comment"># Define a method- process_payment that takes a PaymentMethod object</span>
+        payment_method.authorize()              <span class="comment"># call the- authorize method on the PaymentMethod object</span>
+        payment_method.charge()                 <span class="comment"># class the- charge method on the- PaymentMethod object</span>
+
+payment_processor = PaymentProcessor()
+
+credit_card = CreditCard()                      <span class="comment"># create a PaymentProcessor object</span>
+payment_processor.process_payment(credit_card)  <span class="comment"># use the PaymentProcessor to process the payment with the- CreditCard</span>
+
+paypal = PayPal()                           <span class="comment"># create a PayPal object</span>
+payment_processor.process_payment(paypal)   <span class="comment"># use the PaymentProcessor to process the payment with PayPal</span>
+    </code>
+</pre>
+<p>In this code, [ PaymentMethod ] is an abstract base class that declares two abstract methods: [ authorize ] and [ charge ]. [ CreditCard ] and [ PayPay ] are concrete classes that inherit from [ PaymentMethod ] and provide their own implementations of these methods.</p>
+<p>The [ PaymentProcessor ] class has a [ process_payment ] method that takes a [ PaymentMethod ] object and calls its [ authorize ] and [ charge ] methods. This method doesn't need to know what specific type [ PaymentMethod ] it's dealing with, it just knows that it can call [ authorize ] and [ charge ] on it. This is abstraction in action.</p>
+<p class="margin-top">More detailed explanation:</p>
+<p>In the system, [ PaymentMethod ] is an abstract base class (ABC) that defines a common interface for all payment methods. This interface includes two methods: [ authorize ] and [ charge ]. These methods are marked as abstract, meaning they have no implementation in [ PaymentMethod ] and must be implemented by any concrete (i.e., non-abstract) subclass.</p>
+<p>[ CreditCard ] and [ PayPal ] are concrete classes that inherit from [ PaymentMethod ] and provide their own implementations of the [ authorize ] and [ charge ] methods. These implementations contain the specific steps required to authorize and charge a payment using each method.</p>
+<p>The [ PaymentProcessor ] class represents the part of the system that processes payments. It has a [ process_payment ] method that takes an object of type [ PaymentMethod ] and called its [ authorize ] and [ charge ] methods. This method doesn't need to know the details of how each payment method authorized and charges payments; it just needs to know that it can call [ authorize ] and [ charge ] on any [ PaymentMethod ] object.</p>
+<p>This is where the power of abstraction comes in. By defining a common interface for all payment methods, we can write code in [ PaymentProcessor ] that works with any payment method, regardless of its specific implementation. This makes [ PaymentProcessor ] more flexible and easier to maintain. If we want to add a new payment method in the future, we just need to create a new class that implements the [ PaymentMethod ] interface; we don't need to change any code in [ PaymentProcessor ].</p>
+<p>Abstraction in this context is used to hide the complex details of authorizing and charging different types of payments, while providing a simple, consistent interface for processing any type of payment. This reduces complexity, improves maintainability, and makes the code more flexible and extensible.</p>
 {% endblock %}
