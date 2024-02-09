@@ -1,25 +1,68 @@
 /* -------NAVIGATION------- */
 nav {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    position: fixed;
+    top: 5px;
+    background-color: bisque;
 }
 
 nav a {
-    color: rgb(255, 255, 255);
     padding: 10px 10px;
-
+    margin-bottom: 20px;
 }
 
 nav a:hover {
     background-color: rgb(0, 0, 0);
-    color: rgb(255, 254, 254);
+    color: rgb(0, 255, 238);
     border-radius: 10px;
     padding: 5px 5px;
 }
 
-.navbar {
-    width: 100%;
 
+
+
+
+/* for the drop down */
+.dropbtn{
+    padding: 16px;
+    font-size: 16;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(78, 78, 78);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: rgb(74, 74, 74);
 }
 
 
@@ -28,7 +71,7 @@ nav a:hover {
 
 /* -------BODY BASE------- */
 html {
-    background-color: #74a394aa;
+    background-color: rgba(0, 0, 0, 0.891);
 }
 
 
@@ -37,11 +80,18 @@ html {
 
 
 /* -------BODY------- */
-h1 {
+.topic-title {
     display: flex;
     justify-content: center;
-    align-items: center;
-
+    color: rgb(255, 255, 255);
+    font-family: monospace;
+    font-size: 3em;
+    font-weight: bolder;
+    border-radius: 20px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    border-bottom: 4px solid rgb(0, 0, 0);
+    border-top: 4px solid rgb(0, 0, 0);;
 }
 
 h2 {
@@ -52,7 +102,6 @@ h2 {
 }
 
 .container {
-    border: 3px solid rgb(72, 65, 57);
     border-radius: 10px;
     padding: 10px;
     max-width: 850px;
@@ -63,17 +112,37 @@ h2 {
 
 
 /* -------PARAGRAPH------- */
+.sub-topic {
+    background-color: rgb(63, 63, 63);
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 50px;
+    padding-top: 15px;
+    padding-bottom: .1px;
+    padding-left: 10px;
+}
+
 p {
-    color: rgb(31, 32, 47);
+    color: beige;
     max-width: 800px;
     margin: auto;
     display: block;
     margin-top: 10px;
-    margin-bottom: 10px;
+    font-family: monospace;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.para-block {
+    border-bottom: 3px solid rgb(0, 0, 0);
+    border-top: 3px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    margin-bottom: 30px;
+
 }
 
 .margin-top {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .highlight {
@@ -82,7 +151,7 @@ p {
             /* will need to wrap like so: <span class="highlight">theWord</span> */
 
 .code-box {
-    background-color: rgb(65, 64, 64);
+    background-color: rgba(0, 0, 0, 0.511);
     padding: 7px;
     border-radius: 5px;
     text-wrap: nowrap;
@@ -90,6 +159,7 @@ p {
     max-width: 600px;
     display: block;
     margin: auto;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .code-box code {
@@ -98,14 +168,16 @@ p {
 
 .links {
     color: rgb(255, 255, 255);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .links:hover {
     background-color: rgb(0, 0, 0);
-    color: rgb(255, 254, 254);
+    color: rgb(0, 255, 238);
     border-radius: 10px;
     padding: 8px 10px;
 }
+
 
 .comment {
     color: white;
