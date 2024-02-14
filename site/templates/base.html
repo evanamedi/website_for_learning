@@ -6,19 +6,19 @@
 		<title>{% block title %}{% endblock %}</title>
 		<link rel="stylesheet" href="{{ url_for("static", filename="style.css") }}">
 	</head>
-	<body> 
-			<div class="navbar">
-				<div class="dropdown">
-					<button class="dropbtn" src="{{ url_for('static', filename='pictures/dropdown.png') }}" alt="Menu">
-					<div class="dropdown-content">
-						<nav>
+	<body class="bg-forest"> 
+			<div>
+				<div>
+					<button> 
+					<div>
+						<nav class="text-word-yellow">
 							<a href="{{ url_for('home') }}">Home</a>
 							<a href="{{ url_for('topics') }}">Topics</a>
 						</nav>
 					</div>
 				</div>
 			</div>
-			<div class="container">
+			<div>
 				{% block body %} {% endblock %}
 			</div>
 	</body>
