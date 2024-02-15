@@ -1,51 +1,126 @@
-{% extends "base.html" %} 
-
-{% block title %}
-Classes & Objects
-{% endblock %} 
-
-{% block body %}
-<h1 class="topic-title">CLASSES & OBJECTS</h1>
-<div class="para-block">
-<p class="margin-top">A class is a blueprint or prototype the defines the variables and the methods (functions) common to all objects of a certain kind.</p>
-<p>An example of a class in Python would be:</p>
-<pre class="code-box">
-    <code>
-class Car:
-    def __init__(self, brand, model, year):
-        self.brand = brand
-        self.model = model
-        self.year = year
-
-    def start_engine(self):
-        print("Engine Started")
-    </code>
-</pre>
-<p>In this example, [ Car ] is the class. It has an __init__ method that is used to initialize new objects of this class, and a [ start_engine ] method that all [ Car ] objects will have.</p>
-<p class="margin-top">An object is an instance of a class. You can create an object of the [ Car ] class like so:</p>
-<pre class="code-box">
+{% extends "base.html" %} {% block title %} Classes & Objects {% endblock %} {%
+block body %}
+<div class="max-w-2xl mx-auto">
+	<h1 class="my-10 text-yellow-100 text-2xl">CLASSES & OBJECTS</h1>
+	<div class="text-left">
+		<p>
+			A class is a blueprint or prototype the defines the variables and
+			the methods (functions) common to all objects of a certain kind.
+		</p>
+		<p class="mt-5">An example of a class in Python would be:</p>
+		<pre
+			class="p-1 bg-forest text-white font-mono rounded-md overflow-auto my-4"
+		>
+<code>
+class Car: 
+	def __init__(self, brand, model, year): 
+		self.brand = brand 
+		self.model = model 
+		self.year = year 
+		
+		def start_engine(self): 
+			print("Engine Started")
+</code>
+		</pre>
+		<p>
+			In this example, [ Car ] is the class. It has an __init__ method
+			that is used to initialize new objects of this class, and a [
+			start_engine ] method that all [ Car ] objects will have.
+		</p>
+		<p>
+			An object is an instance of a class. You can create an object of the
+			[ Car ] class like so:
+		</p>
+		<pre
+			class="p-1 bg-forest text-white rounded-md overflow-auto max-w-2xl mx-auto my-4"
+		>
     <code>
 my_car = Car("Toyota", "Supra", 2021)
     </code>
 </pre>
-<p>In this example, [ my_car ] is an object of the [ Car ] class, with brand "Toyota", model "Corolla", and year 2021. You can call the methods of the class on this object like this:</p>
-<pre class="code-box">
-    <code>
+		<p>
+			In this example, [ my_car ] is an object of the [ Car ] class, with
+			brand "Toyota", model "Corolla", and year 2021. You can call the
+			methods of the class on this object like this:
+		</p>
+		<pre
+			class="p-1 bg-forest text-white rounded-md overflow-auto max-w-2xl mx-auto my-4"
+		>
+			<code>
 my_car.start_engine()	<span class="comment"># prints "Engine started"</span>
     </code>
 </pre>
-<p>Each object has its own values for the variables defined in the class, and can use the methods defined in the class. You can create as many objects of a class as you need, and they are all independent of each other. If you change a variable in one object, it does not affect other objects.</p>
-<p>In summary, a class is like a blueprint, and an object is something you build based on that blueprint. The class defines what variables and methods an object will have, and the object is an instance of the class with actual values.</p>
-</div>
-<div class="para-block">
-<p class="margin-top">Benefits of using classes and objects in OOP:</p>
-<p>Modularity: The source code for an object can be written and maintained independently of the source code for other objects. Once created, an object can be easily passed around inside the system.</p>
-<p>Information-hiding: By interacting only with an object's methods, the details of its internal implementation remain hidden from the outside world.</p>
-<p>Code Re-usability: If an object already exists (perhaps written by another person), you can use that object in your program. This allows specialists to implement/test/debug complex, task-specific objects, which you can then trust to run your own code.</p>
-<p>Plug-ability & Debugging Ease: If a particular object turns out to be problematic, you can simply remove it from your application and plug in a different object as its replacement. This is analogous to fixing mechanical problems in the real world. If a bolt breaks, you replace it, not the entire machine.</p>
-<p>Encapsulation: A class or object can encapsulate functionality and data into one reusable package. the data (attributes) and code (methods) are tied together as a self-contained unit called an object. This encapsulation helps manage complexity by keeping the interactions between objects under control.</p>
-<p>Inheritance: Classes can inherit common properties and functionality from other classes. This allows for more efficient and consistent code by allowing classes to share, extend, and override configurations and behaviors defined in other classes.</p>
-<p>Polymorphism: Polymorphism allows a single interface to represent different types of objects at runtime. This means that different classes can define the same method or property and you can use objects of different classes interchangeably.</p>
-<p>These benefits make OOP a popular choice for large, complex software systems and applications where ease of maintenance, rapid development, and code reusability are important.</p>
+		<p>
+			Each object has its own values for the variables defined in the
+			class, and can use the methods defined in the class. You can create
+			as many objects of a class as you need, and they are all independent
+			of each other. If you change a variable in one object, it does not
+			affect other objects.
+		</p>
+		<p class="mt-5">
+			In summary, a class is like a blueprint, and an object is something
+			you build based on that blueprint. The class defines what variables
+			and methods an object will have, and the object is an instance of
+			the class with actual values.
+		</p>
+	</div>
+	<h3 class="mt-16 text-yellow-100 text-xl">
+		Benefits of using classes and objects in OOP:
+	</h3>
+	<div class="text-left">
+		<h4 class="mt-5 text-yellow-100">Modularity:</h4>
+		<p>
+			The source code for an object can be written and maintained
+			independently of the source code for other objects. Once created, an
+			object can be easily passed around inside the system.
+		</p>
+		<h4 class="mt-5 text-yellow-100">Information-hiding:</h4>
+		<p>
+			By interacting only with an object's methods, the details of its
+			internal implementation remain hidden from the outside world.
+		</p>
+		<h4 class="mt-5 text-yellow-100">Code Re-usability:</h4>
+		<p>
+			If an object already exists (perhaps written by another person), you
+			can use that object in your program. This allows specialists to
+			implement/test/debug complex, task-specific objects, which you can
+			then trust to run your own code.
+		</p>
+		<h4 class="mt-5 text-yellow-100">Plug-ability & Debugging Ease:</h4>
+		<p>
+			If a particular object turns out to be problematic, you can simply
+			remove it from your application and plug in a different object as
+			its replacement. This is analogous to fixing mechanical problems in
+			the real world. If a bolt breaks, you replace it, not the entire
+			machine.
+		</p>
+		<h4 class="mt-5 text-yellow-100">Encapsulation:</h4>
+		<p>
+			A class or object can encapsulate functionality and data into one
+			reusable package. the data (attributes) and code (methods) are tied
+			together as a self-contained unit called an object. This
+			encapsulation helps manage complexity by keeping the interactions
+			between objects under control.
+		</p>
+		<h4 class="mt-5 text-yellow-100">Inheritance:</h4>
+		<p>
+			Classes can inherit common properties and functionality from other
+			classes. This allows for more efficient and consistent code by
+			allowing classes to share, extend, and override configurations and
+			behaviors defined in other classes.
+		</p>
+		<h4 class="mt-5 text-yellow-100">Polymorphism:</h4>
+		<p>
+			Polymorphism allows a single interface to represent different types
+			of objects at runtime. This means that different classes can define
+			the same method or property and you can use objects of different
+			classes interchangeably.
+		</p>
+		<p class="mt-8 mb-10">
+			These benefits make OOP a popular choice for large, complex software
+			systems and applications where ease of maintenance, rapid
+			development, and code reusability are important.
+		</p>
+	</div>
 </div>
 {% endblock %}

@@ -4,22 +4,30 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>{% block title %}{% endblock %}</title>
-		<link rel="stylesheet" href="{{ url_for("static", filename="style.css") }}">
+		<link rel="stylesheet" href="{{ url_for("static", filename="style.css",
+		_external=True) }}?{{ time.time() }}">
 	</head>
-	<body class="bg-forest"> 
-			<div>
-				<div>
-					<button> 
-					<div>
-						<nav class="text-word-yellow">
-							<a href="{{ url_for('home') }}">Home</a>
-							<a href="{{ url_for('topics') }}">Topics</a>
-						</nav>
-					</div>
-				</div>
-			</div>
-			<div>
-				{% block body %} {% endblock %}
-			</div>
+	<body class="bg-gradient-to-b from-gray-700 via-gray-800 to-gray-900 min-h-screen">
+		<div class="flex items-center justify-center mt-8">
+			<nav
+				class="text-white low border border-gray-200 bg-black rounded-mid px-4 py-2 fixed"
+			>
+				<a
+					href="{{ url_for('home') }}"
+					class="px-3 text-yellow-100 hover:text-blue-400"
+					>Home</a
+				>
+				<a
+					href="{{ url_for('topics') }}"
+					class="px-3 text-yellow-100 hover:text-blue-400"
+					>Topics</a
+				>
+			</nav>
+		</div>
+		<div
+			class="text-white flex flex-col items-center justify-center text-center m-4"
+		>
+			{% block body %} {% endblock %}
+		</div>
 	</body>
 </html>

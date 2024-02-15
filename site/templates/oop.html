@@ -5,41 +5,77 @@ OOP
 {% endblock %} 
 
 {% block body %}
-<h1 class="topic-title">Object-Oriented Programming</h1>
+<div>
+<h1 class="my-10 text-yellow-100">Object-Oriented Programming</h1>
 
 <h2>Here are the main ideas of OOP:</h2>
+<div class="max-w-2xl mx-auto">
 <ul>
-    <li class="sub-topic">
-        <a class="links" href="{{ url_for("classes_and_objects") }}">Classes & Objects</a>
-        <p>A class is a blueprint for creating objects. Objects are instances of a class, which holds variables and methods.</p>
+    <li>
+        <a href="{{ url_for("classes_and_objects") }}" class="mt-5 block group">
+            <div>
+                <h3 class="text-yellow-100 group-hover:text-blue-400">Classes & Objects</h3>
+                <p class="text-white group-hover:text-blue-400">A class is a blueprint for creating objects. Objects are instances of a class, which holds variables and methods.</p>
+            </div>
+        </a>
     </li>
-    <li class="sub-topic">
-        <a class="links" href="{{ url_for("inheritance") }}">Inheritance</a>
-        <p>This is the process by which one class inherits the properties (methods and fields) of another. With the use of inheritance, the information is made manageable in a hierarchical order.</p>
+    <li>
+        <a href="{{ url_for("inheritance") }}" class="mt-5 block group">
+            <div>
+                <h3 class="text-yellow-100 group-hover:text-blue-400">Inheritance</h3>
+                <p class="text-white group-hover:text-blue-400">This is the process by which one class inherits the properties (methods and fields) of another. With the use of inheritance, the information is made manageable in a hierarchical order.</p>
+            </div>
+        </a>
     </li>
-    <li class="sub-topic">
-        <a class="links" href="{{ url_for("encapsulation") }}">Encapsulation</a>
-        <p>This is the technique of making the fields in a class private and providing access to the fields via public methods. It increases security as the methods and variables of the class are hidden from other classes.</P>
+    <li>
+        <a href="{{ url_for("encapsulation") }}" class="mt-5 block group">
+            <div>
+                <h3 class="text-yellow-100 group-hover:text-blue-400">Encapsulation</h3>
+                <p class="text-white group-hover:text-blue-400">This is the technique of making the fields in a class private and providing access to the fields via public methods. It increases security as the methods and variables of the class are hidden from other classes.</P>
+            </div>
+        </a>
     </li>
-    <li class="sub-topic">
-        <a class="links" href="{{ url_for("polymorphism") }}">Polymorphism</a>
-        <p>This allows methods to behave differently, based on the object that it is acting upon. This is usually  achieved by overloading methods for different inputs or by using inheritance and overriding methods. </P>
+    <li>
+        <a href="{{ url_for("polymorphism") }}" class="mt-5 block group">
+            <div>
+                <h3 class="text-yellow-100 group-hover:text-blue-400">Polymorphism</h3>
+                <p class="text-white group-hover:text-blue-400">This allows methods to behave differently, based on the object that it is acting upon. This is usually  achieved by overloading methods for different inputs or by using inheritance and overriding methods. </P>
+            </div>
+        </a>
     </li>
-    <li class="sub-topic">
-        <a class="links" href="{{ url_for("abstraction") }}">Abstraction</a>
-        <p>This is the process of hiding certain details and showing only essential information to the user. Abstraction can be achieved with either abstract classes or interfaces.</p>
+    <li>
+        <a href="{{ url_for("abstraction") }}" class="mt-5 block group">
+            <div>
+                <h3 class="text-yellow-100 group-hover:text-blue-400">Abstraction</h3>
+                <p class="text-white group-hover:text-blue-400">This is the process of hiding certain details and showing only essential information to the user. Abstraction can be achieved with either abstract classes or interfaces.</p>
+            </div>
+        </a>
     </li>
-    <li class="sub-topic">
-        <a class="links" href="{{ url_for("association") }}">Association</a>
-        <p>This is a relationship where all objects have their own life-cycle and there is no owner. Let's take an example of a Teacher and Student. Multiple students can associate with a single teacher and a single student can associate with multiple teachers, but there is no ownership between the objects and both have their own life-cycle.</p>
+    <li>
+        <a href="{{ url_for("association") }}" class="mt-5 block group">
+            <div>
+                <h3 class="text-yellow-100 group-hover:text-blue-400">Association</h3>
+                <p class="text-white group-hover:text-blue-400">This is a relationship where all objects have their own life-cycle and there is no owner. Let's take an example of a Teacher and Student. Multiple students can associate with a single teacher and a single student can associate with multiple teachers, but there is no ownership between the objects and both have their own life-cycle.</p>
+            </div>
+        </a>
     </li>
-    <li class="sub-topic">
-        <a class="links" href="{{ url_for("aggregation") }}">Aggregation</a>
-        <p>This is a specialized from of Association where all objects have their own life-cycle, but there is ownership, and child objects can not belong to another parent object. Let's take an example of Department and Teacher. A single teach can no belong to multiple departments, but if we delete the department, the teacher object will not be destroyed.</p>
+    <li>
+        <a href="{{ url_for("aggregation") }}" class="mt-5 block group">
+            <div>
+                <h3 class="text-yellow-100 group-hover:text-blue-400">Aggregation</h3>
+                <p class="text-white group-hover:text-blue-400">This is a specialized from of Association where all objects have their own life-cycle, but there is ownership, and child objects can not belong to another parent object. Let's take an example of Department and Teacher. A single teach can no belong to multiple departments, but if we delete the department, the teacher object will not be destroyed.</p>
+            </div>
+        </a>
     </li>
-    <li class="sub-topic">
-        <a class="links" href="{{ url_for("composition") }}">Composition</a>
-        <p>This is a specialized form of Aggregation and we can call this as a "death" relationship. It is a strong type of Aggregation. Child object does not have its life-cycle and if parent object is deleted, all child objects will also be deleted. Let's take an example of a relationship between House and Rooms. House can contain multiple rooms- there is no independent life of room and any room can not belong to two different houses. If we delete the house, room will be automatically deleted.</p>
+    <li>
+        <a href="{{ url_for("composition") }}" class="mt-5 block group">
+            <div>
+                <h3 class="text-yellow-100 group-hover:text-blue-400">Composition</h3>
+                <p class="text-white group-hover:text-blue-400">This is a specialized form of Aggregation and we can call this as a "death" relationship. It is a strong type of Aggregation. Child object does not have its life-cycle and if parent object is deleted, all child objects will also be deleted. Let's take an example of a relationship between House and Rooms. House can contain multiple rooms- there is no independent life of room and any room can not belong to two different houses. If we delete the house, room will be automatically deleted.</p>
+            </div>
+        </a>
     </li>
 </ul>
+</div>
+</div>
 {% endblock %}

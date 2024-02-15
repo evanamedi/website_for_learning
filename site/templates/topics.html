@@ -5,18 +5,21 @@ Topics
 {% endblock %} 
 
 {% block body %}
-<h1>Howdy, welcome to the topics page</h1>
-
-<h2>Check this stuff out:</h2>
-<ul>
+<div>
+<h1 class="text-yellow-100 my-10 text-2xl">Howdy, welcome to the topics page</h1>
+<div class="rounded-mid mb-6 bg-gray-400 bg-opacity-15 p-3 px-40">
+<h2 class="mb-3">Check this stuff out:</h2>
+<ul class="text-yellow-100">
     <li>
-        <a class="links" href="{{ url_for("oop") }}">Object-Oriented Programming</a>
+        <a class="hover:text-blue-400" href="{{ url_for("oop") }}">Object-Oriented Programming</a>
     </li>
     <li>
-        <a class="links" href="{{ url_for("oop") }}">Algorithms</a>
+        <a class="hover:text-blue-400" href="{{ url_for("oop") }}">Algorithms</a>
     </li>
     <li>
-        <a class="links" href="{{ url_for("oop") }}">Data Structures</a>
+        <a class="hover:text-blue-400" href="{{ url_for("oop") }}">Data Structures</a>
     </li>
 </ul>
+</div>
+</div>
 {% endblock %}

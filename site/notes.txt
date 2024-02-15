@@ -1,0 +1,10 @@
+To do list:
+
+-make nav bar a drop down bar
+    -possibly drop down for links that follow
+
+-possible side nav bar within each topic for all sub-topics
+
+-fix code boxes, and add syntax color coding
+
+-

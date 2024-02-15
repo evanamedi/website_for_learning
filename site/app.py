@@ -1,6 +1,13 @@
 from flask import Flask, render_template
+import time
+import os
 
 app = Flask(__name__)
+app.config["send_file_max_age_default"] = 0
+
+@app.context_processor
+def inject_time():
+    return {"time": time}
 
 @app.route("/")
 def home():
@@ -50,4 +57,12 @@ def composition():
     return render_template("composition.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    extra_dirs = ['templates/', 'static/']
+    extra_files = extra_dirs[:]
+    for extra_dir in extra_dirs:
+        for directory, folders, files in os.walk(extra_dir):
+            for filename in files:
+                filename = os.path.join(directory, filename)
+                if os.path.isfile(filename):
+                    extra_files.append(filename)
+    app.run(port=8000, extra_files=extra_files)
