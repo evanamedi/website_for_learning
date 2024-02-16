@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>{% block title %}{% endblock %}</title>
-		<link rel="stylesheet" href="{{ url_for("static", filename="style.css",
-		_external=True) }}?{{ time.time() }}">
-	</head>
-	<body
-		class="bg-gradient-to-b from-gray-900 via-gray-850 to-gray-800 min-h-screen"
-	>
-		<div class="flex items-center justify-center mt-8">
-			<nav
-				class="text-yellow-100 low border border-gray-200 bg-black rounded-mid px-4 py-2 fixed"
-			>
-				<a href="{{ url_for("home") }}" class="px-3 hover:text-blue-400"
-					>Home</a
-				>
-				<a
-					href="{{ url_for("topics") }}"
-					class="px-3 hover:text-blue-400"
-					>Topics</a
-				>
-			</nav>
-		</div>
-		<div
-			class="text-white flex flex-col items-center justify-center text-center m-4"
-		>
-			{% block body %} {% endblock %}
-		</div>
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for("static", filename="style.css",
+        _external=True) }}?{{ time.time() }}">
+    </head>
+    <body
+        class="bg-gradient-to-b from-gray-900 via-gray-850 to-gray-800 min-h-screen"
+    >
+        <div class="flex items-center justify-center mt-8">
+            <nav
+                class="text-yellow-100 low border border-gray-200 bg-black rounded-mid px-4 py-2 fixed"
+            >
+                <button id="dropdownButton" class="text-white">Menu</button>
+                <div id="dropdownMenu" class="hidden absolute bg-black text-white py-2">
+                    <a id="HomeLink" href="{{ url_for("home") }}" class="block px-4 py-2 hover:text-blue-400"
+                        >Home</a
+                    >
+                    <a
+                        id="topicsLink" href="{{ url_for("topics") }}" class="block px-4 py-2 hover:text-blue-400"
+                        >Topics</a
+                    >
+                </div>
+            </nav>
+        </div>
+        <div
+            class="text-white flex flex-col items-center justify-center text-center m-4"
+        >
+            {% block body %} {% endblock %}
+        </div>
+		<script src="{{ url_for("static", filename="js/dropdown.js") }}"></script>
+    </body>
 </html>
