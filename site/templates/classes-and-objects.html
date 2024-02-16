@@ -1,6 +1,9 @@
 {% extends "base.html" %} {% block title %} Classes & Objects {% endblock %} {%
 block body %}
 <div class="max-w-2xl mx-auto">
+	<div class="inline-block float-left text-yellow-100 text-left border border-gray-200 bg-black rounded-mid p-1 fixed justify-center left-24 top-3">
+		<a class="hover:text-blue-400" href="{{ url_for("oop") }}">&lt; Back to OOP</a>
+	</div>
 	<h1 class="my-10 text-yellow-100 text-2xl">CLASSES & OBJECTS</h1>
 	<div class="text-left">
 		<p>
@@ -22,12 +25,12 @@ class Car:
 			print("Engine Started")
 </code>
 		</pre>
-		<p>
+		<p class="my-5">
 			In this example, [ Car ] is the class. It has an __init__ method
 			that is used to initialize new objects of this class, and a [
 			start_engine ] method that all [ Car ] objects will have.
 		</p>
-		<p>
+		<p class="my-5">
 			An object is an instance of a class. You can create an object of the
 			[ Car ] class like so:
 		</p>
@@ -38,7 +41,7 @@ class Car:
 my_car = Car("Toyota", "Supra", 2021)
     </code>
 </pre>
-		<p>
+		<p class="my-5">
 			In this example, [ my_car ] is an object of the [ Car ] class, with
 			brand "Toyota", model "Corolla", and year 2021. You can call the
 			methods of the class on this object like this:
@@ -50,7 +53,7 @@ my_car = Car("Toyota", "Supra", 2021)
 my_car.start_engine()	<span class="comment"># prints "Engine started"</span>
     </code>
 </pre>
-		<p>
+		<p class="my-5">
 			Each object has its own values for the variables defined in the
 			class, and can use the methods defined in the class. You can create
 			as many objects of a class as you need, and they are all independent
@@ -116,7 +119,7 @@ my_car.start_engine()	<span class="comment"># prints "Engine started"</span>
 			the same method or property and you can use objects of different
 			classes interchangeably.
 		</p>
-		<p class="mt-8 mb-10">
+		<p class="mt-10 mb-10">
 			These benefits make OOP a popular choice for large, complex software
 			systems and applications where ease of maintenance, rapid
 			development, and code reusability are important.

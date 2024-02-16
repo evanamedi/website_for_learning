@@ -7,4 +7,4 @@ To do list:
 
 -fix code boxes, and add syntax color coding
 
--
+-fix the page width and sizing to apply to the base.html file for all htmls

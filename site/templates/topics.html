@@ -5,9 +5,12 @@ Topics
 {% endblock %} 
 
 {% block body %}
-<div>
+<div class="max-w-2xl mx-auto">
+    <div class="inline-block float-left text-yellow-100 text-left border border-gray-200 bg-black rounded-mid p-1 fixed justify-center left-24 top-3">
+		<a class="hover:text-blue-400" href="{{ url_for("home") }}">&lt; Back Home</a>
+	</div>
 <h1 class="text-yellow-100 my-10 text-2xl">Howdy, welcome to the topics page</h1>
-<div class="rounded-mid mb-6 bg-gray-400 bg-opacity-15 p-3 px-40">
+<div class="rounded-mid bg-gray-400 bg-opacity-15 p-3">
 <h2 class="mb-3">Check this stuff out:</h2>
 <ul class="text-yellow-100">
     <li>

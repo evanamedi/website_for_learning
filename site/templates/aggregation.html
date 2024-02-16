@@ -1,20 +1,48 @@
-{% extends "base.html" %} 
-
-{% block title %}
-Aggregation
-{% endblock %} 
-
-{% block body %}
-<h1 class="topic-title">Aggregation</h1>
-<p class="margin-top">Aggregation is a special form of association in OOP. It represents a "has-as"" relationship between two classes, where one class is a complex entity that consists of one or more other classes, but there is still independence of the classes.</p>
-<p>Key Points:</p>
-<p>Definition: Aggregation is a relationship where one class (the "whole" or "parent") has a reference to another class (the "part" or "child"), but the child can exist independently of the parent. For example, a Car might have an Engine. The car is the whole entity that uses the engine, but the engine could exist without the car.</p>
-<p>Independence: In an aggregation relationship, the child can exist independently of the parent. If the parent is deleted, the child can continue to exist. For example, if you delete a Car object, the Engine object can still exist.</p>
-<p>Lifecycle: The lifecycle of the child is not managed by the parent. The child can be created and deleted independently.</p>
-<p>Direction: Aggregation is typically a one-way relationship. The parent knows about the child, but the child does not know about the parent.</p>
-<p>Example:</p>
-<pre class="code-box">
-    <code>
+{% extends "base.html" %} {% block title %} Aggregation {% endblock %} {% block
+body %}
+<div class="max-w-2xl mx-auto mb-10">
+    <div class="inline-block float-left text-yellow-100 text-left border border-gray-200 bg-black rounded-mid p-1 fixed justify-center left-24 top-3">
+		<a class="hover:text-blue-400" href="{{ url_for("oop") }}">&lt; Back to OOP</a>
+	</div>
+	<h1 class="my-10 text-yellow-100 text-2xl">Aggregation</h1>
+	<p>
+		Aggregation is a special form of association in OOP. It represents a
+		"has-as"" relationship between two classes, where one class is a complex
+		entity that consists of one or more other classes, but there is still
+		independence of the classes.
+	</p>
+	<h2 class="mt-16 text-yellow-100 text-xl">Key Points:</h2>
+	<div class="text-left">
+		<h3 class="mt-5 text-yellow-100">Definition:</h3>
+		<p>
+			Aggregation is a relationship where one class (the "whole" or
+			"parent") has a reference to another class (the "part" or "child"),
+			but the child can exist independently of the parent. For example, a
+			Car might have an Engine. The car is the whole entity that uses the
+			engine, but the engine could exist without the car.
+		</p>
+		<h3 class="mt-5 text-yellow-100">Independence:</h3>
+		<p>
+			In an aggregation relationship, the child can exist independently of
+			the parent. If the parent is deleted, the child can continue to
+			exist. For example, if you delete a Car object, the Engine object
+			can still exist.
+		</p>
+		<h3 class="mt-5 text-yellow-100">Lifecycle:</h3>
+		<p>
+			The lifecycle of the child is not managed by the parent. The child
+			can be created and deleted independently.
+		</p>
+		<h3 class="mt-5 text-yellow-100">Direction:</h3>
+		<p>
+			Aggregation is typically a one-way relationship. The parent knows
+			about the child, but the child does not know about the parent.
+		</p>
+		<p class="mb-5 mt-16 text-yellow-100">Example:</p>
+		<pre
+			class="p-1 bg-forest text-white font-mono rounded-md overflow-auto my-4"
+		>
+<code>
 class Engine:
     def __init__(self, type):
         self.type = type
@@ -22,14 +50,18 @@ class Engine:
 class Car:
     def __init__(self, model, engine):
         self.model = model
-        self.engine = engine	<span class="comment"># the Car has an Engine</span>
+        self.engine = engine	# the Car has an Engine
 
-<span class="comment"># create an Engine instance</span>
-engine = Engine("V8")
+engine = Engine("V8")           # create an Engine instance
 
-<span class="comment"># create a Car instance with Engine</span>
-car = Car("Toyota", engine)
-    </code>
+car = Car("Toyota", engine)     # create a Car instance with Engine
+</code>
 </pre>
-<p>In this example, the [ Car ] class has an aggregation relationship with the [ Engine ] class. The [ Car ] has an [ Engine ], but the [ Engine ] can exist independently of the [ Car ].</p>
+		<p class="mt-5">
+			In this example, the [ Car ] class has an aggregation relationship
+			with the [ Engine ] class. The [ Car ] has an [ Engine ], but the [
+			Engine ] can exist independently of the [ Car ].
+		</p>
+	</div>
+</div>
 {% endblock %}
