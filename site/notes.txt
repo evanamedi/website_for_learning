@@ -1,10 +1,19 @@
 To do list:
 
--make nav bar a drop down bar
+-make nav bar a drop down bar (done)
+    -add css to dropdown boxes
     -possibly drop down for links that follow
 
 -possible side nav bar within each topic for all sub-topics
 
+-current back nav:
+    -Create a base html file for this to inherit
+
 -fix code boxes, and add syntax color coding
+	-probably solve this with javascript
 
 -fix the page width and sizing to apply to the base.html file for all htmls
+
+-create a class of attributes specific for titles, h1s, h2s, paragraphs, etc.. so css can be more modular and consistent to add/change
+
+-possibly add top margin to text boxes

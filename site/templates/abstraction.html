@@ -1,33 +1,33 @@
 {% extends "base.html" %} {% block title %} Abstraction {% endblock %} {% block
 body %}
-<div class="max-w-2xl mx-auto">
-    <div class="inline-block float-left text-yellow-100 text-left border border-gray-200 bg-black rounded-mid p-1 fixed justify-center left-24 top-3">
-		<a class="hover:text-blue-400" href="{{ url_for("oop") }}">&lt; Back to OOP</a>
+<div class="pageBody">
+    <div class="backButton">
+		<a class="backButtonHover" href="{{ url_for("oop") }}">&lt; Back to OOP</a>
 	</div>
-	<h1 class="my-10 text-yellow-100 text-2xl">Abstraction</h1>
+	<h1 class="h1Title">Abstraction</h1>
 		<p>
 			Abstraction is the process of hiding the complex details of an
 			operation while providing a simpler interface.
 		</p>
-        <h2 class="mt-16 text-yellow-100 text-xl">Key Points:</h2>
-        <div class="text-left">
-		<h3 class="mt-5 text-yellow-100">Data Abstraction:</h3>
-		<p>
+        <h2 class="h2Title">Key Points</h2>
+        <div class="bodyDiv">
+		<h3 class="h3Title">Data Abstraction:</h3>
+		<p class="pExplain">
 			Data abstraction is about providing only essential information to
 			the outside world while hiding their background details, i.e., how
 			the data is stored and operations are performed. In other words, the
 			user interacts with only the information that is necessary, while
 			the underlying complexities and hidden from the user.
 		</p>
-		<h3 class="mt-5 text-yellow-100">Method Abstraction:</h3>
-		<p>
+		<h3 class="h3Title">Method Abstraction:</h3>
+		<p class="pExplain">
 			This is achieved by creating methods that perform complex
 			operations, but providing a simple interface for them. The user
 			doesn't need to know how the method does what it does- they just
 			need to know what it does.
 		</p>
-		<h3 class="mt-5 text-yellow-100">Abstract Classes and Methods:</h3>
-		<p>
+		<h3 class="h3Title">Abstract Classes and Methods:</h3>
+		<p class="pExplain">
 			In some programming languages like Java & C#, you can create
 			abstract classes and methods. An abstract class is a class that
 			cannot be instantiated and is meant to be subclassed. It can contain
@@ -36,16 +36,16 @@ body %}
 			Subclasses of an abstract class are generally expected to provide an
 			implementation for the abstract methods./p>
 		</p>
-		<h3 class="mt-5 text-yellow-100">Interface:</h3>
-		<p>
+		<h3 class="h3Title">Interface:</h3>
+		<p class="pExplain">
 			An interface is a completely abstract class that contains only
 			abstract methods. In languages that support interfaces, they are a
 			powerful way to achieve full abstraction and multiple inheritance.
 		</p>
-		<h3 class="mt-5 text-yellow-100">
+		<h3 class="h3Title">
 			Encapsulation and Information Hiding:
 		</h3>
-		<p>
+		<p class="pExplain">
 			Abstraction is closely related to encapsulation and information
 			hiding. Encapsulation is the bundling of data and methods that
 			operate on that data within one unit, and information hiding is
@@ -61,7 +61,12 @@ body %}
 			of an abstracted operation without affecting the rest of the code,
 			as long as the interface stays the same.
 		</p>
-		<p class="my-10">
+	</div>
+		<h2 class="h2Title">
+			Example of Abstraction In Python
+		</h2>
+		<div class="bodyDiv">
+		<p class="pText">
 			Consider an example of a payment processing system. In this system,
 			we have different payment methods like Credit Card, Debit Card, and
 			PayPal. Each payment method follows the same process: authorize the
@@ -69,7 +74,7 @@ body %}
 			details for each payment method are different.
 		</p>
 		<pre
-			class="p-1 bg-forest text-white font-mono rounded-md overflow-auto my-4"
+			class="codeBox"
 		>
     <code>
 from abc import ABC, abstractmethod
@@ -111,14 +116,14 @@ paypal = PayPal()                           # create a PayPal object
 payment_processor.process_payment(paypal)   # use the PaymentProcessor to process the payment with PayPal
     </code>
     </pre>
-		<p class="my-5">
+		<p class="pText">
 			In this code, [ PaymentMethod ] is an abstract base class that
 			declares two abstract methods: [ authorize ] and [ charge ]. [
 			CreditCard ] and [ PayPay ] are concrete classes that inherit from [
 			PaymentMethod ] and provide their own implementations of these
 			methods.
 		</p>
-		<p class="my-5">
+		<p class="pText">
 			The [ PaymentProcessor ] class has a [ process_payment ] method that
 			takes a [ PaymentMethod ] object and calls its [ authorize ] and [
 			charge ] methods. This method doesn't need to know what specific
@@ -126,8 +131,10 @@ payment_processor.process_payment(paypal)   # use the PaymentProcessor to proces
 			call [ authorize ] and [ charge ] on it. This is abstraction in
 			action.
 		</p>
-		<p class="my-5 text-yellow-100">More detailed explanation:</p>
-		<p>
+	</div>
+		<h3 class="h3Title">More detailed explanation</h3>
+		<div class="bodyDiv">
+		<p class="pText">
 			In the system, [ PaymentMethod ] is an abstract base class (ABC)
 			that defines a common interface for all payment methods. This
 			interface includes two methods: [ authorize ] and [ charge ]. These
@@ -135,14 +142,14 @@ payment_processor.process_payment(paypal)   # use the PaymentProcessor to proces
 			in [ PaymentMethod ] and must be implemented by any concrete (i.e.,
 			non-abstract) subclass.
 		</p>
-		<p class="my-5">
+		<p class="pText">
 			[ CreditCard ] and [ PayPal ] are concrete classes that inherit from
 			[ PaymentMethod ] and provide their own implementations of the [
 			authorize ] and [ charge ] methods. These implementations contain
 			the specific steps required to authorize and charge a payment using
 			each method.
 		</p>
-		<p class="my-5">
+		<p class="pText">
 			The [ PaymentProcessor ] class represents the part of the system
 			that processes payments. It has a [ process_payment ] method that
 			takes an object of type [ PaymentMethod ] and called its [ authorize
@@ -151,7 +158,7 @@ payment_processor.process_payment(paypal)   # use the PaymentProcessor to proces
 			it just needs to know that it can call [ authorize ] and [ charge ]
 			on any [ PaymentMethod ] object.
 		</p>
-		<p class="my-5">
+		<p class="pText">
 			This is where the power of abstraction comes in. By defining a
 			common interface for all payment methods, we can write code in [
 			PaymentProcessor ] that works with any payment method, regardless of
@@ -161,7 +168,7 @@ payment_processor.process_payment(paypal)   # use the PaymentProcessor to proces
 			implements the [ PaymentMethod ] interface; we don't need to change
 			any code in [ PaymentProcessor ].
 		</p>
-		<p class="my-5">
+		<p class="pText">
 			Abstraction in this context is used to hide the complex details of
 			authorizing and charging different types of payments, while
 			providing a simple, consistent interface for processing any type of

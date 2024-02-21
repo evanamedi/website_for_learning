@@ -1,46 +1,50 @@
 {% extends "base.html" %} {% block title %} Aggregation {% endblock %} {% block
 body %}
-<div class="max-w-2xl mx-auto mb-10">
-    <div class="inline-block float-left text-yellow-100 text-left border border-gray-200 bg-black rounded-mid p-1 fixed justify-center left-24 top-3">
-		<a class="hover:text-blue-400" href="{{ url_for("oop") }}">&lt; Back to OOP</a>
+<div class="pageBody">
+    <div class="backButton">
+		<a class="backButtonHover" href="{{ url_for("oop") }}">&lt; Back to OOP</a>
 	</div>
-	<h1 class="my-10 text-yellow-100 text-2xl">Aggregation</h1>
-	<p>
+	<h1 class="h1Title">Aggregation</h1>
+	<p class="pText">
 		Aggregation is a special form of association in OOP. It represents a
 		"has-as"" relationship between two classes, where one class is a complex
 		entity that consists of one or more other classes, but there is still
 		independence of the classes.
 	</p>
-	<h2 class="mt-16 text-yellow-100 text-xl">Key Points:</h2>
-	<div class="text-left">
-		<h3 class="mt-5 text-yellow-100">Definition:</h3>
-		<p>
+	<h2 class="h2Title">Key Points</h2>
+	<div class="bodyDiv">
+		<h3 class="h3Title">Definition:</h3>
+		<p class="pExplain">
 			Aggregation is a relationship where one class (the "whole" or
 			"parent") has a reference to another class (the "part" or "child"),
 			but the child can exist independently of the parent. For example, a
 			Car might have an Engine. The car is the whole entity that uses the
 			engine, but the engine could exist without the car.
 		</p>
-		<h3 class="mt-5 text-yellow-100">Independence:</h3>
-		<p>
+		<h3 class="h3Title">Independence:</h3>
+		<p class="pExplain">
 			In an aggregation relationship, the child can exist independently of
 			the parent. If the parent is deleted, the child can continue to
 			exist. For example, if you delete a Car object, the Engine object
 			can still exist.
 		</p>
-		<h3 class="mt-5 text-yellow-100">Lifecycle:</h3>
-		<p>
+		<h3 class="h3Title">Lifecycle:</h3>
+		<p class="pExplain">
 			The lifecycle of the child is not managed by the parent. The child
 			can be created and deleted independently.
 		</p>
-		<h3 class="mt-5 text-yellow-100">Direction:</h3>
-		<p>
+		<h3 class="h3Title">Direction:</h3>
+		<p class="pExplain">
 			Aggregation is typically a one-way relationship. The parent knows
 			about the child, but the child does not know about the parent.
 		</p>
-		<p class="mb-5 mt-16 text-yellow-100">Example:</p>
+	</div>
+		<h2 class="h2Title">
+			Example of Aggregation In Python
+		</h2>
+		<div class="bodyDiv">
 		<pre
-			class="p-1 bg-forest text-white font-mono rounded-md overflow-auto my-4"
+			class="codeBox"
 		>
 <code>
 class Engine:
@@ -57,7 +61,7 @@ engine = Engine("V8")           # create an Engine instance
 car = Car("Toyota", engine)     # create a Car instance with Engine
 </code>
 </pre>
-		<p class="mt-5">
+		<p class="pText">
 			In this example, the [ Car ] class has an aggregation relationship
 			with the [ Engine ] class. The [ Car ] has an [ Engine ], but the [
 			Engine ] can exist independently of the [ Car ].

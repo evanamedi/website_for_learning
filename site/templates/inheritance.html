@@ -1,54 +1,52 @@
 {% extends "base.html" %} {% block title %} Inheritance {% endblock %} {% block
 body %}
-<div class="max-w-2xl mx-auto">
-	<div class="inline-block float-left text-yellow-100 text-left border border-gray-200 bg-black rounded-mid p-1 fixed justify-center left-24 top-3">
-		<a class="hover:text-blue-400" href="{{ url_for("oop") }}">&lt; Back to OOP</a>
+<div class="pageBody">
+	<div class="backButton">
+		<a class="backButtonHover" href="{{ url_for("oop") }}">&lt; Back to OOP</a>
 	</div>
-	<h1 class="my-10 text-yellow-100 text-2xl">Inheritance</h1>
-	<div class="text-left">
-		<p class="margin-top">
+	<h1 class="h1Title">Inheritance</h1>
+		<p class="pText">
 			Inheritance is a fundamental principle of OOP that allows one class
 			to inherit properties and methods from another class. It promotes
 			the concept of reusability and is a way to create a new class using
 			properties of an existing class without modifying it.
 		</p>
-	</div>
-	<h2 class="mt-16 text-yellow-100 text-xl">Key Concepts:</h2>
-	<div class="text-left">
-		<h3 class="mt-5 text-yellow-100">Base Class (Parent Class):</h3>
-		<p class="mt-2">
+	<h2 class="h2Title">Key Concepts</h2>
+	<div class="bodyDiv">
+		<h3 class="h3Title">Base Class (Parent Class):</h3>
+		<p class="pExplain">
 			The class whose properties and methods are inherited is known as the
 			base case or parent class.
 		</p>
-		<h3 class="mt-5 text-yellow-100">Derived Class (Child Class):</h3>
-		<p class="mt-2">
+		<h3 class="h3Title">Derived Class (Child Class):</h3>
+		<p class="pExplain">
 			The class that inherits properties from another class is known as
 			the derived class or child class.
 		</p>
-		<h3 class="mt-5 text-yellow-100">Inheritance Types:</h3>
-		<p class="mt-2">
+		<h3 class="h3Title">Inheritance Types:</h3>
+		<p class="pExplain">
 			There are several types of inheritance, including single, multiple,
 			multilevel, hierarchical, and hybrid inheritance. The type of
 			inheritance implemented depends on the programming language used.
 		</p>
-		<h3 class="mt-5 text-yellow-100">Method Overriding:</h3>
-		<p class="mt-2">
+		<h3 class="h3Title">Method Overriding:</h3>
+		<p class="pExplain">
 			In the derived classes, you can modify the behavior of methods
 			inherited from the base class. This is known as method overriding.
 		</p>
-		<h3 class="mt-5 text-yellow-100">Access Modifiers:</h3>
-		<p class="mt-2">
+		<h3 class="h3Title">Access Modifiers:</h3>
+		<p class="pExplain">
 			These define the accessibility of the properties and methods of a
 			class. Common access modifiers include public, private, and
 			protected.
 		</p>
 	</div>
-	<h2 class="mt-16 text-yellow-100 text-xl">
-		Example of inheritance in Python:
+	<h2 class="h2Title">
+		Examples of Inheritance In Python
 	</h2>
-	<div class="text-left">
+	<div class="bodyDiv">
 		<pre
-			class="p-1 bg-forest text-white font-mono rounded-md overflow-auto my-4"
+			class="codeBox"
 		>
         <code>
 class Animal:	        # base class
@@ -67,14 +65,14 @@ class Cat(Animal):	    # derived class
         return "Meow!"
         </code>
 </pre>
-		<p class="my-5">
+		<p class="pText">
 			In this example, [ Dog ] and [ Cat ] classes inherit from the Animal
 			class. Both [ Dog ] and [ Cat ] override the [ speak ] method of
 			Animal. Now, if you create instance of [ Dog ] and [ Cat ] you can
 			call the [ Speak ] method on them:
 		</p>
 		<pre
-			class="p-1 bg-forest text-white font-mono rounded-md overflow-auto my-4"
+			class="codeBox"
 		>
         <code>
 fido = Dog("Fido")
@@ -84,18 +82,17 @@ whiskers = Cat("Whiskers")
 print(whiskers.speak())		# prints "Meow!"
         </code>
 </pre>
-		<p class="my-5">
+		<p class="pText">
 			Inheritance allows for more organized and manageable code, making it
 			easier to create and maintain applications. The derived classes have
 			their own methods and can also use the methods of the base class,
 			reducing code duplication.
 		</p>
 	</div>
-	<h2 class="mt-24 text-yellow-100 text-xl">Three more Examples:</h2>
-	<div class="text-left my-10">
-		<h3 class="mb-5 text-yellow-100">Using the [ super() ] function:</h3>
+		<h3 class="h3Title">Using the [ super() ] function</h3>
+		<div class="bodyDiv">
 		<pre
-			class="p-1 bg-forest text-white font-mono rounded-md overflow-auto my-4"
+			class="codeBox"
 		>
             <code>
 class Mammal:
@@ -110,16 +107,16 @@ class Dog(Mammal):
 d1 = Dog()
             </code>
 </pre>
-		<p class="my-5">The output would be:</p>
+		<p class="pText">The output would be:</p>
 		<pre
-			class="p-1 bg-forest text-white font-mono rounded-md overflow-auto my-4"
+			class="codeBox"
 		>
         <code>
 &gt;&gt;Dog has four legs.
 &gt;&gt;Dog is a warm-blooded animal.
         </code>
 </pre>
-		<p class="mt-5">
+		<p class="pText">
 			Breakdown: When [ d1 = Dog() ] is executed, it called the [ __init__
 			] method in the dog class. The [ Dog ] classes [ __init__ ] method
 			first prints "Dog has four legs." Then, [ super().__init__("Dog") ]
@@ -127,14 +124,16 @@ d1 = Dog()
 			(the parent class), passing "Dog" as an argument. The mammal classes
 			[ __init__ ] method prints "Dog is a warm-blooded animal."
 		</p>
-		<h3 class="mt-20 text-yellow-100">Multiple Inheritance:</h3>
-		<p class="mt-5">
+	</div>
+		<h3 class="h3Title">Multiple Inheritance</h3>
+		<div class="bodyDiv">
+		<p class="pText">
 			Python supports multiple inheritance, where a class can be derived
 			from more than one base classes
 		</p>
 
 		<pre
-			class="p-1 bg-forest text-white font-mono rounded-md overflow-auto my-4"
+			class="codeBox"
 		>
         <code>
 class Animal:
@@ -149,23 +148,25 @@ class Sparrow(Animal, Bird):
     pass
 
 s = Sparrow()
-print(s.eats())		<span class="comment"># prints "Eats food"</span>
-print(s.files())	<span class="comment"># prints "Flies in the sky"</span>
+print(s.eats())		# prints "Eats food"
+print(s.files())	# prints "Flies in the sky"
         </code>
 </pre>
 
-		<p class="mt-5">
+		<p class="pText">
 			In this example, [ Sparrow ] is derived from both [ Animal ] and [
 			Bird ] classes, and inherits methods from both.
 		</p>
-		<h3 class="mt-20 text-yellow-100">Method Overriding:</h3>
-		<p class="mt-5">
+	</div>
+		<h3 class="h3Title">Method Overriding</h3>
+		<div class="bodyDiv">
+		<p class="pText">
 			In Python, method overriding occurs by simply defining in the child
 			class a method with the same name of a method in the parent class.
 		</p>
 
 		<pre
-			class="p-1 bg-forest text-white font-mono rounded-md overflow-auto my-4"
+			class="codeBox"
 		>
         <code>
 class Bird:
@@ -187,34 +188,34 @@ b1 = Bird()
 b2 = sparrow()	
 b3 = ostrich()	
 
-b1.intro()	<span class="comment"># prints "There are many types of birds."</span>
-b1.flight()	<span class="comment"># prints "Most of the birds can fly but some cannot."</span>
+b1.intro()	# prints "There are many types of birds."
+b1.flight()	# prints "Most of the birds can fly but some cannot."
 
-b2.intro()	<span class="comment"># prints "There are many types of birds."</span>
-b2.flight()	<span class="comment"># prints "Sparrows can fly."</span>
+b2.intro()	# prints "There are many types of birds."
+b2.flight()	# prints "Sparrows can fly."
 
-b3.intro()	<span class="comment"># prints "There are many types of birds."</span>
-b3.flight()	<span class="comment"># prints "Ostriches cannot fly."</span>
+b3.intro()	# prints "There are many types of birds."
+b3.flight()	# prints "Ostriches cannot fly."
         </code>
 </pre>
 
-		<p class="mt-5">
+		<p class="pText">
 			In this example, sparrow and ostrich classes override the flight
 			method of the bird class
 		</p>
-		<p class="mt-5">
+		<p class="pText">
 			When [ b1.intro() ] and [ b1.flight() ] are called, it prints "There
 			are many types of birds." and "Most of the birds can fly but come
 			cannot." because [ b1 ] is an instance of the [ Bird ] class.
 		</p>
-		<p class="mt-5">
+		<p class="pText">
 			When [ b2.intro ] and [ b1.flight ] are called, it prints "There are
 			many types of birds." and "Sparrows can fly." because b2 is an
 			instance of the sparrow class. The [ intro() ] method is inherited
 			from the [ Bird ] class and the [ flight() ] method is overridden in
 			the [ sparrow ] class.
 		</p>
-		<p class="mt-5">
+		<p class="pText">
 			When [ b3.into() ] and [ b3.flight() ] are called, it prints "There
 			are many types of birds." and "Ostriches cannot fly." because [ b3 ]
 			is an instance of the [ ostrich ] class. The [ intro() ] method is

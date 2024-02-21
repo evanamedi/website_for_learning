@@ -1,3 +1,53 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+/* Main body strucutre */
+.pageBody {
+	@apply max-w-2xl mx-auto mb-10;
+}
+
+/* Nav bar to go back to previous page */
+.backButton {
+	@apply inline-block float-left text-yellow-100 text-left border border-gray-200 bg-black rounded-mid p-1 fixed justify-center left-24 top-3;
+}
+
+.backButtonHover {
+	@apply hover:text-blue-400;
+}
+
+/* Header titles */
+.h1Title {
+	@apply my-10 text-yellow-100 text-2xl;
+}
+
+.h2Title {
+	@apply mt-16 text-yellow-100 text-xl;
+}
+
+.h3Title {
+	@apply mt-10 text-yellow-100;
+}
+
+/* Body div for left text allignment */
+.bodyDiv {
+	@apply text-left;
+}
+
+/* paragraph text */
+.pText {
+	@apply my-5;
+}
+/* paragraphs that explain something (has header above it) */
+.pExplain {
+	@apply mt-1;
+}
+/* Last paragraph of a page for summary */
+.pSummary {
+	@apply mt-10;
+}
+
+/* Box that contains code */
+.codeBox {
+	@apply p-1 bg-forest text-white font-mono rounded-md overflow-auto my-4;
+}
