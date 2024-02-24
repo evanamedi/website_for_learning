@@ -5,24 +5,38 @@ Topics
 {% endblock %} 
 
 {% block body %}
-<div class="max-w-2xl mx-auto">
-    <div class="inline-block float-left text-yellow-100 text-left border border-gray-200 bg-black rounded-mid p-1 fixed justify-center left-24 top-3">
-		<a class="hover:text-blue-400" href="{{ url_for("home") }}">&lt; Back Home</a>
+<div class="pageBody">
+    <div class="backButton">
+		<a class="backButtonHover" href="{{ url_for("home") }}">&lt; Back Home</a>
 	</div>
-<h1 class="text-yellow-100 my-10 text-2xl">Howdy, welcome to the topics page</h1>
-<div class="rounded-mid bg-gray-400 bg-opacity-15 p-3">
-<h2 class="mb-3">Check this stuff out:</h2>
-<ul class="text-yellow-100">
+    <div class="bodyDiv">
+<h1 class="h1Title">Let's get to it</h1>
+<div b>
+<h2 class="h2Title">Topics</h2>
+<ul>
     <li>
-        <a class="hover:text-blue-400" href="{{ url_for("oop") }}">Object-Oriented Programming</a>
+        <a href="{{ url_for("oop") }}" class="mt-5 block group">
+            <div>
+                <h3 class="h3Link">Object-Oriented Programming</h3>
+            </div>
+        </a>
     </li>
     <li>
-        <a class="hover:text-blue-400" href="{{ url_for("oop") }}">Algorithms</a>
+        <a href="{{ url_for("oop") }}" class="mt-5 block group">
+            <div>
+                <h3 class="h3Link">Algorithms</h3>
+            </div>
+        </a>
     </li>
     <li>
-        <a class="hover:text-blue-400" href="{{ url_for("oop") }}">Data Structures</a>
+        <a href="{{ url_for("oop") }}" class="mt-5 block group">
+            <div>
+                <h3 class="h3Link">Data Structures</h3>
+            </div>
+        </a>
     </li>
 </ul>
+</div>
 </div>
 </div>
 {% endblock %}

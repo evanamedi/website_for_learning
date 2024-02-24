@@ -4,14 +4,15 @@ body %}
     <div class="backButton">
 		<a class="backButtonHover" href="{{ url_for("oop") }}">&lt; Back to OOP</a>
 	</div>
+	<div class="bodyDiv">
 	<h1 class="h1Title">Abstraction</h1>
 		<p>
 			Abstraction is the process of hiding the complex details of an
 			operation while providing a simpler interface.
 		</p>
+	<div class="paraBreak">
         <h2 class="h2Title">Key Points</h2>
-        <div class="bodyDiv">
-		<h3 class="h3Title">Data Abstraction:</h3>
+		<h3 class="h3Title">Data Abstraction</h3>
 		<p class="pExplain">
 			Data abstraction is about providing only essential information to
 			the outside world while hiding their background details, i.e., how
@@ -19,14 +20,14 @@ body %}
 			user interacts with only the information that is necessary, while
 			the underlying complexities and hidden from the user.
 		</p>
-		<h3 class="h3Title">Method Abstraction:</h3>
+		<h3 class="h3Title">Method Abstraction</h3>
 		<p class="pExplain">
 			This is achieved by creating methods that perform complex
 			operations, but providing a simple interface for them. The user
 			doesn't need to know how the method does what it does- they just
 			need to know what it does.
 		</p>
-		<h3 class="h3Title">Abstract Classes and Methods:</h3>
+		<h3 class="h3Title">Abstract Classes and Methods</h3>
 		<p class="pExplain">
 			In some programming languages like Java & C#, you can create
 			abstract classes and methods. An abstract class is a class that
@@ -34,16 +35,16 @@ body %}
 			abstract methods (methods declared without an implementation) as
 			well as concrete methods (methods with an implementation).
 			Subclasses of an abstract class are generally expected to provide an
-			implementation for the abstract methods./p>
+			implementation for the abstract methods.</p>
 		</p>
-		<h3 class="h3Title">Interface:</h3>
+		<h3 class="h3Title">Interface</h3>
 		<p class="pExplain">
 			An interface is a completely abstract class that contains only
 			abstract methods. In languages that support interfaces, they are a
 			powerful way to achieve full abstraction and multiple inheritance.
 		</p>
 		<h3 class="h3Title">
-			Encapsulation and Information Hiding:
+			Encapsulation and Information Hiding
 		</h3>
 		<p class="pExplain">
 			Abstraction is closely related to encapsulation and information
@@ -53,8 +54,8 @@ body %}
 			takes this a step further by not only hiding the data, but also by
 			hiding how the methods of a class are implemented.
 		</p>
-		<p class="my-20">
-			The main advantage of abstraction is that it reduces complexity by
+		<p class="my-14">
+			<span class="text-xl">The</span> <span class="text-xl">main</span> <span class="text-lg">advantage</span> <span class="text-lg">of</span> <span class="text-base">abstraction</span> <span class="text-base">is</span> that it reduces complexity by
 			breaking down complex systems into smaller, more manageable parts.
 			This is also increases the maintainability, reusability, and
 			modularity of the code. It allows you to change the implementation
@@ -62,10 +63,10 @@ body %}
 			as long as the interface stays the same.
 		</p>
 	</div>
+	<div class="paraBreak">
 		<h2 class="h2Title">
 			Example of Abstraction In Python
 		</h2>
-		<div class="bodyDiv">
 		<p class="pText">
 			Consider an example of a payment processing system. In this system,
 			we have different payment methods like Credit Card, Debit Card, and
@@ -76,7 +77,7 @@ body %}
 		<pre
 			class="codeBox"
 		>
-    <code>
+    <code class="language-python">
 from abc import ABC, abstractmethod
 
 class PaymentMethod(ABC):   # define an abstract base class- PaymentMethod
@@ -132,7 +133,8 @@ payment_processor.process_payment(paypal)   # use the PaymentProcessor to proces
 			action.
 		</p>
 	</div>
-		<h3 class="h3Title">More detailed explanation</h3>
+	<div class="paraBreak">
+		<h3 class="h3Title">A more detailed explanation</h3>
 		<div class="bodyDiv">
 		<p class="pText">
 			In the system, [ PaymentMethod ] is an abstract base class (ABC)

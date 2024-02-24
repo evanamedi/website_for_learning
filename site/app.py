@@ -19,6 +19,7 @@ def topics():
 
 
 
+
 # OOP TOPICS
 @app.route("/topics/oop")
 def oop():
@@ -55,6 +56,26 @@ def aggregation():
 @app.route("/topics/oop/composition")
 def composition():
     return render_template("composition.html")
+
+# OOP NAV BAR LINKS
+@app.route('/test')
+def test():
+    nav_links = [
+        ("topics", "Topics"),
+        ("oop", "OOP"),
+        ("classes_and_objects", "Classes & Objects"),
+        ("inheritance", "Inheritance"),
+        ("encapsulation", "Encapsulation"),
+        ("polymorphism", "Polymorphism"),
+        ("abstraction", "Abstraction"),
+        ("association", "Association"),
+        ("aggregation", "Aggregation"),
+        ("composition", "Composition")
+    ]
+    return render_template('test.html', nav_links=nav_links)
+
+
+
 
 if __name__ == "__main__":
     extra_dirs = ['templates/', 'static/']

@@ -1,22 +1,30 @@
 {% extends "base.html" %} {% block title %} Home {% endblock %} {% block body %}
-<div class="max-w-2xl mx-auto">
-	<h1 class="text-yellow-100 my-10 text-2xl">
-		Welcome to the home page homie!
-	</h1>
-	<h3 class="text-yellow-100 mb-6">Website for Learning</h3>
-	<div class="rounded-mid mb-6 bg-gray-400 bg-opacity-15 p-3">
-		<h3 class="text-yellow-100 mb-3">Objective:</h3>
-		<p>
-			This is going to be a website for learning coding and certain
-			computer science topics mainly just for myself. The idea is to learn
-			and build while I learn- but also try to understand topics in a way
-			that would also allow me to teach others these ideas. I have no
-			intention for this to be a course for others, and surely there will
-			be a lot of mistakes. But my hope is that this approach will help me
-			learn better, and also apply what I learn at the same time. This is
-			just for me. But if you happen to find this- feel free to pick it
-			apart.
-		</p>
+<div class="pageBody">
+	<div class="bodyDiv">
+		<h1 class="h1Title">Website for Learning</h1>
+		<div class="mb-10">
+			<h2 class="h2Title">Objective</h2>
+			<p>
+				This is going to be a website for learning coding and certain
+				computer science topics mainly just for myself. The idea is to
+				learn and build while I learn- but also try to understand topics
+				in a way that would also allow me to teach others these ideas. I
+				have no intention for this to be a course for others, and surely
+				there will be a lot of mistakes. But my hope is that this
+				approach will help me learn better, and also apply what I learn
+				at the same time. This is just for me. But if you happen to find
+				this- feel free to pick it apart.
+			</p>
+		</div>
+		<ul>
+			<li>
+				<a href="{{ url_for("topics") }}" class="mt-5 block group">
+					<div>
+						<h3 class="h3Link">Click here to get started</h3>
+					</div>
+				</a>
+			</li>
+		</ul>
 	</div>
 </div>
 {% endblock %}

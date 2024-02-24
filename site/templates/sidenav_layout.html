@@ -1,0 +1,7 @@
+<!-- child1.html -->
+{% extends "base.html" %}
+{% block title %}Child 1{% endblock %}
+{% block content %}
+    <h1>This is child 1</h1>
+    {% block child1_content %}{% endblock %}
+{% endblock %}

@@ -4,6 +4,7 @@ body %}
     <div class="backButton">
 		<a class="backButtonHover" href="{{ url_for("oop") }}">&lt; Back to OOP</a>
 	</div>
+	<div class="bodyDiv">
 	<h1 class="h1Title">Polymorphism</h1>
 	<p class="pText">
 		The word "Polymorphism" comes from Greek and means "many shapes". In
@@ -11,9 +12,9 @@ body %}
 		forms. The most common use of polymorphism in OOP occurs when a parent
 		class reference is used to refer to a child class object.
 	</p>
+	<div class="paraBreak">
 	<h2 class="h2Title">Key Points</h2>
-    <div class="bodyDiv">
-        <h3 class="h3Title">Subtyping:</h3>
+        <h3 class="h3Title">Subtyping</h3>
 	<p class="pExplain">
 		Subtyping, also known as subtype polymorphism, is a form of
 		polymorphism in which a subclass is datatype that is a subtype of a
@@ -21,13 +22,13 @@ body %}
 		In other words, a reference variable of a superclass can point to an
 		object of the subclass.
 	</p>
-    <h3 class="h3Title">Method Overriding: </h3>
+    <h3 class="h3Title">Method Overriding</h3>
 	<p class="pExplain">
 		Method overriding is a feature that allows a subclass
 		to provide a different implementation for a method that is already
 		defined in its superclass. This is used to achieve runtime polymorphism.
 	</p>
-    <h3 class="h3Title">Operator Overloading: </h3>
+    <h3 class="h3Title">Operator Overloading</h3>
 	<p class="pExplain">
 		Operator overloading is a type of polymorphism in
 		which an operator is overloaded to provide the special meaning to the
@@ -36,15 +37,15 @@ body %}
 		etc.
 	</p>
 </div>
+<div class="paraBreak">
 	<h2 class="h2Title">
 		Example of Polymorphism In Python
 	</h2>
-	<p>(previously used to demonstrate inheritance)</p>
-	<div class="bodyDiv">
+	<p class="-mt-8 mb-6">(previously used to demonstrate inheritance)</p>
     <pre
     class="codeBox"
 >
-<code>
+<code class="language-python">
 class Bird:
     def intro(self):
         print("There are many types of birds.")
@@ -105,6 +106,7 @@ bird3.flight()	# prints "Ostriches cannot fly."
 		action.
 	</p>
 </div>
+<div class="paraBreak">
 	<h2 class="h2Title">Further Explanation</h2>
 	<div class="bodyDiv">
     <h3 class="h3Title">Inheritance</h3>
@@ -132,9 +134,9 @@ bird3.flight()	# prints "Ostriches cannot fly."
 		polymorphism.
 	</p>
 </div>
+<div class="paraBreak">
     <h2 class="h2Title">Common use cases</h2>
-    <div class="bodyDiv">
-    <h3 class="h3Title">Creating Reusable Code:</h3>
+    <h3 class="h3Title">Creating Reusable Code</h3>
 	<p class="pExplain">
 		Polymorphism allows you to write code that does
 		not need to be changed when a new derived class is added, which makes
@@ -142,7 +144,7 @@ bird3.flight()	# prints "Ostriches cannot fly."
 		base class type and it will be able to handle any objects of classes
 		derived from that base class.
 	</p>
-    <h3 class="h3Title">Implementing Interface Polymorphism:</h3>
+    <h3 class="h3Title">Implementing Interface Polymorphism</h3>
 	<p class="pExplain">
 		In languages that support
 		interfaces (like Java or C#), polymorphism is often used to implement
@@ -158,14 +160,14 @@ bird3.flight()	# prints "Ostriches cannot fly."
 		strategy object can be changed to change the behavior of the context
 		object.
 	</p>
-    <h3 class="h3Title">Abstract Classes and Methods:</h3>
+    <h3 class="h3Title">Abstract Classes and Methods</h3>
 	<p class="pExplain">
 		In some languages, you can define abstract
 		classes and methods that provide a base level of functionality, but
 		require subclasses to provide specific implementations. This is a form
 		of polymorphism.
 	</p>
-    <h3 class="h3Title">Graphics and User Interface:</h3>
+    <h3 class="h3Title">Graphics and User Interface</h3>
 	<p class="pExplain">
 		In graphical and user interface
 		programming, polymorphism is used extensively. For example, you might
@@ -173,7 +175,7 @@ bird3.flight()	# prints "Ostriches cannot fly."
 		Rectangle ], etc. You can then write code that works with [ Shape ]
 		objects, and it will work with any derived shape objects.
 	</p>
-    <h3 class="h3Title">Game programming:</h3>
+    <h3 class="h3Title">Game programming</h3>
 	<p class="pExplain">
 		In game programming, polymorphism is used to manage
 		and manipulate collections of different types of game objects. For

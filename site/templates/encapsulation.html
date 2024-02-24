@@ -4,6 +4,7 @@ block body %}
     <div class="backButton">
 		<a class="backButtonHover" href="{{ url_for("oop") }}">&lt; Back to OOP</a>
 	</div>
+	<div class="bodyDiv">
 		<h1 class="h1Title">Encapsulation</h1>
 		<p class="pText">
 		Encapsulation is one the fundamental concepts in OOP. It describes the
@@ -11,34 +12,34 @@ block body %}
 		This puts restrictions on accessing variables and methods directly and
 		can prevent the accidental modification of data.
 		</p>
+		<div class="paraBreak">
 		<h2 class="h2Title">Breaking it down</h2>
-	<div class="bodyDiv">
 		<h3 class="h3Title">Data Hiding:</h3>
 		<p class="pExplain">
 			The implementation of the class is hidden from other classes, and
 			can only be accessed through the methods of their current class.
 			This is also known as data hiding.
 		</p>
-		<h3 class="h3Title">Accessors and Mutators:</h3>
+		<h3 class="h3Title">Accessors and Mutators</h3>
 		<p class="pExplain">
 			To achieve encapsulation in Python, you can use private attributes
 			and provide public getter and setter methods to modify and access
 			the attributes. These are often referred to as accessors (getters)
 			and mutators (setters).
 		</p>
-		<h3 class="h3Title">Abstraction:</h3>
+		<h3 class="h3Title">Abstraction</h3>
 		<p class="pExplain">
 			Encapsulation also allows a class to change its implementation
 			without affecting other parts of the code, which is known as
 			abstraction.
 		</p>
 	</div>
+	<div class="paraBreak">
 		<h2 class="h2Title">Examples of Encapsulation In Python</h2>
-		<div class="bodyDiv">
 		<pre
 			class="codeBox"
 		>
-    <code>
+    <code class="language-python">
 class Computer:		            # define a class named Computer
     def __init__(self):		    # initialize method or constructor for the class
         self.__maxprice = 900   # private attribute, not directly accessible from outside the class
@@ -73,7 +74,7 @@ c.sell()
 		<pre
 			class="codeBox"
 		>
-    <code>
+    <code class="language-python">
 &gt;&gt;Selling Price: 900
 &gt;&gt;Selling Price: 900
 &gt;&gt;Selling Price: 1000
@@ -93,8 +94,8 @@ c.sell()
 			use the [ setMaxPrice ] method to modify it.
 		</p>
 	</div>
+	<div class="paraBreak">
 		<h3 class="h3Title">Example 2</h3>
-		<div class="bodyDiv">
 		<p class="pText">
 			A setter method provides controlled access to modify the values of
 			private attributes. This is useful because you can add checks or
@@ -104,7 +105,7 @@ c.sell()
 		<pre
 			class="codeBox"
 		>
-    <code>
+    <code class="language-python">
 class Myclass:
     def __init__(self):
         self.__my_attribute = 0
@@ -125,46 +126,46 @@ obj.set_my_attribute(10)	# this modifies the __my_attribute value to 10
 			try to set it to a negative number, it will raise a ValueError.
 		</p>
 	</div>
+	<div class="paraBreak">
 	<h2 class="h2Title">
 		Some Best Practices For Using Encapsulation In OOP
 	</h2>
-	<div class="bodyDiv">
-		<h3 class="h3Title">Data Hiding:</h3>
+		<h3 class="h3Title">Data Hiding</h3>
 		<p class="pExplain">
 			Keep the data hidden and not directly accessible from outside the
 			class. Use private visibility for attributes which should not be
 			accessible directly.
 		</p>
-		<h3 class="h3Title">Use Accessors and Mutators:</h3>
+		<h3 class="h3Title">Use Accessors and Mutators</h3>
 		<p class="pExplain">
 			Provide public getting and setter methods (accessors and mutators)
 			to access and modify the private attributes of a class. This allows
 			you to control how important variables are read and written to.
 		</p>
-		<h3 class="h3Title">Validation:</h3>
+		<h3 class="h3Title">Validation</h3>
 		<p class="pExplain">
 			You can add validation logic in setter methods to protect your data
 			from getting into an inconsistent or invalid state.
 		</p>
-		<h3 class="h3Title">Abstraction:</h3>
+		<h3 class="h3Title">Abstraction</h3>
 		<p class="pExplain">
 			Encapsulation is a way to achieve data abstraction. The user will
 			have the information on what methods do, but they won't need to know
 			how they do it.
 		</p>
-		<h3 class="h3Title">Reduce Coupling:</h3>
+		<h3 class="h3Title">Reduce Coupling</h3>
 		<p class="pExplain">
 			Encapsulation can help reduce coupling between different parts of
 			your program, making it easier to modify without affecting other
 			parts of the code.
 		</p>
-		<h3 class="h3Title">Consistency:</h3>
+		<h3 class="h3Title">Consistency</h3>
 		<p class="pExplain">
 			Be consistent in how you apply encapsulation in your code. If you
 			start using getters and setters for accessing properties of the
 			class, stick to it throughout your code.
 		</p>
-		<h3 class="h3Title">Avoid Excessive Use:</h3>
+		<h3 class="h3Title">Avoid Excessive Use</h3>
 		<p class="pExplain">
 			While encapsulation is important, it's also crucial not to overuse
 			it. Not every single variable needs to be private with getters and

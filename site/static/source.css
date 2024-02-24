@@ -1,15 +1,16 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import "prism.css";
 
-/* Main body strucutre */
+/* Main body structure */
 .pageBody {
 	@apply max-w-2xl mx-auto mb-10;
 }
 
 /* Nav bar to go back to previous page */
 .backButton {
-	@apply inline-block float-left text-yellow-100 text-left border border-gray-200 bg-black rounded-mid p-1 fixed justify-center left-24 top-3;
+	@apply inline-block z-50 float-left text-white text-left border border-gray-200 bg-black rounded-mid p-1 fixed justify-center left-24 top-3;
 }
 
 .backButtonHover {
@@ -18,20 +19,35 @@
 
 /* Header titles */
 .h1Title {
-	@apply my-10 text-yellow-100 text-2xl;
+	@apply mb-10 mt-24 text-sky3 font-mono underline font-semibold text-6xl;
 }
 
 .h2Title {
-	@apply mt-16 text-yellow-100 text-xl;
+	@apply mt-24 mb-8 text-sky3 font-mono font-semibold text-3xl;
 }
 
 .h3Title {
-	@apply mt-10 text-yellow-100;
+	@apply mt-10 text-sky3 font-mono font-semibold text-xl;
 }
 
-/* Body div for left text allignment */
+.h3Link {
+	@apply text-sky3 font-mono font-semibold text-xl group-hover:text-blue-400;
+}
+.pLink {
+	@apply text-white group-hover:text-blue-400;
+}
+
+.subTopicLinkBreak {
+	@apply mt-10;
+}
+
+/* Body div for left text alignment */
 .bodyDiv {
 	@apply text-left;
+}
+
+.paraBreak {
+	@apply mt-36;
 }
 
 /* paragraph text */

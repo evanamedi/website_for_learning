@@ -8,20 +8,24 @@
         _external=True) }}?{{ time.time() }}">
     </head>
     <body
-        class="bg-gradient-to-b from-gray-900 via-gray-850 to-gray-800 min-h-screen"
+        class="bg-gradient-to-b from-gray2 via-gray0 to-gray0 min-h-screen"
     >
         <div class="flex items-center justify-center mt-8">
             <nav
-                class="text-yellow-100 low border border-gray-200 bg-black rounded-mid px-4 py-2 fixed"
+                class="text-yellow-100 z-50 low border border-gray-200 bg-black rounded-mid px-4 py-2 fixed"
             >
                 <button id="dropdownButton" class="text-white">Menu</button>
-                <div id="dropdownMenu" class="hidden absolute bg-black text-white py-2">
+                <div id="dropdownMenu" class="hidden absolute bg-black text-white rounded-mid py-2">
                     <a id="HomeLink" href="{{ url_for("home") }}" class="block px-4 py-2 hover:text-blue-400"
                         >Home</a
                     >
                     <a
                         id="topicsLink" href="{{ url_for("topics") }}" class="block px-4 py-2 hover:text-blue-400"
                         >Topics</a
+                    >
+                    <a
+                        id="topicsLink" href="{{ url_for("test") }}" class="block px-4 py-2 hover:text-blue-400"
+                        >Test</a
                     >
                 </div>
             </nav>
@@ -32,5 +36,6 @@
             {% block body %} {% endblock %}
         </div>
 		<script src="{{ url_for("static", filename="js/dropdown.js") }}"></script>
+        <script src="{{ url_for("static", filename="js/prism.js") }}"></script>
     </body>
 </html>

@@ -4,6 +4,7 @@ body %}
     <div class="backButton">
 		<a class="backButtonHover" href="{{ url_for("oop") }}">&lt; Back to OOP</a>
 	</div>
+	<div class="bodyDiv">
 	<h1 class="h1Title">Aggregation</h1>
 	<p class="pText">
 		Aggregation is a special form of association in OOP. It represents a
@@ -11,9 +12,9 @@ body %}
 		entity that consists of one or more other classes, but there is still
 		independence of the classes.
 	</p>
+	<div class="paraBreak">
 	<h2 class="h2Title">Key Points</h2>
-	<div class="bodyDiv">
-		<h3 class="h3Title">Definition:</h3>
+		<h3 class="h3Title">Definition</h3>
 		<p class="pExplain">
 			Aggregation is a relationship where one class (the "whole" or
 			"parent") has a reference to another class (the "part" or "child"),
@@ -21,32 +22,32 @@ body %}
 			Car might have an Engine. The car is the whole entity that uses the
 			engine, but the engine could exist without the car.
 		</p>
-		<h3 class="h3Title">Independence:</h3>
+		<h3 class="h3Title">Independence</h3>
 		<p class="pExplain">
 			In an aggregation relationship, the child can exist independently of
 			the parent. If the parent is deleted, the child can continue to
 			exist. For example, if you delete a Car object, the Engine object
 			can still exist.
 		</p>
-		<h3 class="h3Title">Lifecycle:</h3>
+		<h3 class="h3Title">Lifecycle</h3>
 		<p class="pExplain">
 			The lifecycle of the child is not managed by the parent. The child
 			can be created and deleted independently.
 		</p>
-		<h3 class="h3Title">Direction:</h3>
+		<h3 class="h3Title">Direction</h3>
 		<p class="pExplain">
 			Aggregation is typically a one-way relationship. The parent knows
 			about the child, but the child does not know about the parent.
 		</p>
 	</div>
+	<div class="paraBreak">
 		<h2 class="h2Title">
 			Example of Aggregation In Python
 		</h2>
-		<div class="bodyDiv">
 		<pre
 			class="codeBox"
 		>
-<code>
+<code class="language-python">
 class Engine:
     def __init__(self, type):
         self.type = type

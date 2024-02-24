@@ -4,6 +4,7 @@ body %}
     <div class="backButton">
 		<a class="backButtonHover" href="{{ url_for("oop") }}">&lt; Back to OOP</a>
 	</div>
+	<div class="bodyDiv">
 	<h1 class="h1Title">Composition</h1>
 	<p class="pText">
 		Composition is a design principle in OOP where a class (the "composite"
@@ -11,43 +12,43 @@ body %}
 		"children"). It represents a "part-of" relationship and is a strong form
 		of aggregation.
 	</p>
+	<div class="paraBreak">
 	<h2 class="h2Title">Key Points</h2>
-	<div class="bodyDiv">
-		<h3 class="h3Title">Definition:</h3>
+		<h3 class="h3Title">Definition</h3>
 		<p class="pExplain">
 			Composition is a relationship where one class (The composite)
 			contains an instance of another class (the component). The component
 			is part of the composite. For example, a Car might have an Engine.
 			The car is the whole entity, and the engine is part of the car.
 		</p>
-		<h3 class="h3Title">Dependence:</h3>
+		<h3 class="h3Title">Dependence</h3>
 		<p class="pExplain">
 			In a composition relationship, the component cannot exist
 			independently of the composite. If the composite is deleted, the
 			component is also deleted. For example, if you deleted a Car object,
 			the Engine object is also deleted because it's part of the car.
 		</p>
-		<h3 class="h3Title">Lifecycle:</h3>
+		<h3 class="h3Title">Lifecycle</h3>
 		<p class="pExplain">
 			The lifecycle of the component is managed by the composite. the
 			component is created when the composite is created, and deleted when
 			the composite is deleted.
 		</p>
-		<h3 class="h3Title">Direction:</h3>
+		<h3 class="h3Title">Direction</h3>
 		<p class="pExplain">
 			Composition is typically an one-way relationship. The composite
 			knows about the component, but the component does not know about the
 			composite.
 		</p>
 	</div>
+	<div class="paraBreak">
 		<h2 class="h2Title">
 			Example of Composition In Python
 		</h2>
-		<div class="bodyDiv">
 		<pre
 			class="codeBox"
 		>
-<code>
+<code class="language-python">
 class Engine:
     def __init__(self, type):
         self.type = type
@@ -72,12 +73,12 @@ car = Car("Toyota", "V8")   # create a Car instance with an Engine
 			object with respect to the [ Car ] object.
 		</p>
 	</div>
+	<div class="paraBreak">
 		<h3 class="h3Title">In Aggregation:</h3>
-		<div class="bodyDiv">
 		<pre
 			class="codeBox"
 		>
-<code>
+<code class="language-python">
 class Engine:
     def __init__(self, type):
         self.type = type
@@ -100,12 +101,12 @@ car = Car("Toyota", engine)     # create a Car instance with the Engine
 			to exist. This is a characteristic of aggregation.
 		</p>
 	</div>
+	<div class="paraBreak">
 		<h3 class="h3Title">In Composition:</h3>
-		<div class="bodyDiv">
 		<pre
 			class="codeBox"
 		>
-<code>
+<code class="language-python">
 class Engine:
     def __init__(self, type):
         self.type = type

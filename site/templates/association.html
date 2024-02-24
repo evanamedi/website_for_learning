@@ -4,11 +4,12 @@ body %}
     <div class="backButton">
 		<a class="backButtonHover" href="{{ url_for("oop") }}">&lt; Back to OOP</a>
 	</div>
+	<div class="bodyDiv">
 	<h1 class="h1Title">Association</h1>
 	<p class="pText">Association represents a relationship between two or more objects</p>
+	<div class="paraBreak">
 	<h2 class="h2Title">Key Points</h2>
-	<div class="bodyDiv">
-		<h3 class="h3Title">Definition:</h3>
+		<h3 class="h3Title">Definition</h3>
 		<p class="pExplain">
 			Association is a "using" relationship between two or more objects.
 			It's a way for one objects to interact with another, without
@@ -16,28 +17,28 @@ body %}
 			object might have an association with a [ car ] object, because the
 			driver uses the car
 		</p>
-		<h3 class="h3Title">Multiplicity:</h3>
+		<h3 class="h3Title">Multiplicity</h3>
 		<p class="pExplain">
 			Association can be one-to-one, one-to-many, many-to-one, or
 			many-to-many. For example, a [ Teacher ] object and a [ Student ]
 			object could have a many-to-many association, because a teacher can
 			teach many students, and a student can have many teachers.
 		</p>
-		<h3 class="h3Title">Directionality:</h3>
+		<h3 class="h3Title">Directionality</h3>
 		<p class="pExplain">
 			Association can be unidirectional or bidirectional. In a
 			unidirectional association, one object is aware of another and can
 			interact with it, but not vice versa. In a bidirectional
 			association, both objects are aware of each other.
 		</p>
-		<h3 class="h3Title">Navigation:</h3>
+		<h3 class="h3Title">Navigation</h3>
 		<p class="pExplain">
 			The direction of the association between two classes is called
 			navigation. It can be either from one class to another or vice
 			versa, or both.
 		</p>
 		<h3 class="h3Title">
-			Association vs Aggregation vs Composition:
+			Association vs Aggregation vs Composition
 		</h3>
 		<p class="pExplain">
 			These are three types of relationships in OOP. Association is the
@@ -47,15 +48,15 @@ body %}
 			the child cannot exist independently of the parent).
 		</p>
 	</div>
+	<div class="paraBreak">
 	<h2 class="h2Title">
 		Examples of Different Relationships In Python
 	</h2>
 		<h3 class="h3Title">One-To-One Relationship</h3>
-		<div class="bodyDiv">
 		<pre
 			class="codeBox"
 		>
-    <code>
+    <code class="language-python">
 class Car:                      # define the car class
     def __init__(self, model):	# the constructor method for the Car class
         self.model = model      # an instance variable 'model' is created and set to the value passed as an argument
@@ -92,8 +93,8 @@ driver.drive(car)	        # call the 'drive' method on the 'driver' instance, pa
 			].
 		</p>
 	</div>
+	<div class="paraBreak">
 		<h3 class="h3Title">One-To-Many Relationship</h3>
-		<div class="bodyDiv">
 		<p class="pText">
 			Let's consider a scenario where a Teacher can have many Students.
 			This is a one-to-many relationship because one Teacher is associated
@@ -102,7 +103,7 @@ driver.drive(car)	        # call the 'drive' method on the 'driver' instance, pa
 		<pre
 			class="codeBox"
 		>
-<code>
+<code class="language-python">
 class Student:
     def __init__(self, name):
         self.name = name
@@ -110,7 +111,7 @@ class Student:
 class Teacher:
     def __init__(self, name):
         self.name = name
-        self.students = [] # this will hold the list of students for the teacher
+        self.students = []	# this will hold the list of students for the teacher
 
     def add_student(self, student):
         self.students.append(student)
@@ -145,8 +146,8 @@ teacher.list_students()
 			many [ Student ] instances.
 		</p>
 	</div>
+	<div class="paraBreak">
 		<h3 class="h3Title">Many-To-Many Relationship</h3>
-		<div class="bodyDiv">
 		<p>
 			A many-to-many relationship occurs when multiple instances of one
 			class are associated with multiple instances of another class.
@@ -157,7 +158,7 @@ teacher.list_students()
 		<pre
 			class="codeBox"
 		>
-<code>
+<code class="language-python">
 class Student:
 	def __init__(self, name):
 		self.name = name
@@ -203,8 +204,8 @@ course2.list_students()</code>
 			many [ Courses ], and a [ Course ] can have many [ Students ].
 		</p>
 	</div>
+	<div class="paraBreak">
 		<h3 class="h3Title">Many-To-One Relationship</h3>
-		<div class="bodyDiv">
 		<p class="pText">
 			A many-to-one relationship occurs when multiple instances of one
 			class are associated with a single instance of another class.
@@ -215,7 +216,7 @@ course2.list_students()</code>
 		<pre
 			class="codeBox"
 		>
-<code>
+<code class="language-python">
 class Child:
     def __init__(self, name, mother):
         self.name = name
