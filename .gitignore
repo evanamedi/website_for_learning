@@ -5,7 +5,4 @@ __pycache__/
 settings.json
 node_modules/
 package-lock.json
-package.json
-tailwind.config.js
-postcss.config.js
 ```
